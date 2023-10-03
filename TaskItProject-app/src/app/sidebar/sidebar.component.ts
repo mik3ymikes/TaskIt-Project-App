@@ -8,8 +8,9 @@ import { User } from './sidebar.model'
 })
 
 export class SidebarComponent {
-  // user: User=[]=[
-  //   new User('')
-  // ]
+
+  users: User[]=[
+    new User('tet', "test", "test")
+  ]
 
 }
