@@ -4,18 +4,28 @@
 
 }
 
+/* .container{
+  display: flex;
+} */
+
+body{
+  display: grid;
+  grid-template-columns: 18% 1fr;
+  height: 100vh;
+}
 
 
 
-.container{
+.side-container{
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  grid-column: 1/2;
+
+  /* height: 100vh; */
 
   border-right: solid rgba(128, 128, 128, 0.199);
 
-  width: 18%;
-
+  /* width: 18%; */
 
 }
 
@@ -39,7 +49,6 @@
   margin: 0 auto;
   margin-top: 15%;
   width: 80%;
-
 
 }
 
@@ -69,4 +78,10 @@ h3{
  justify-content:space-evenly;
  align-items: center;
 
+}
+
+
+.main{
+  grid-column: 2/3;
+  
 }
