@@ -1,0 +1,24 @@
+.title{
+  font-weight: 550;
+  margin: 3%;
+}
+
+h5{
+  font-weight: 700;
+}
+
+.table-filters{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-left: 4%;
+}
+
+.add-task-btn{
+  padding: 10px;
+  border-radius: 12px;
+  margin-left: 25%;
+  width: 150px;
+
+
+}
