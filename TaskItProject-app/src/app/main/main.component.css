@@ -21,19 +21,28 @@ h5{
  margin-bottom: 1%;
   width: 150px;
   margin-left: auto;
-
-
-
-
-
-
-
-
-
 }
 
 .task-table{
   border: 1px solid lightgray;
   border-collapse: collapse;
   margin-left:3%;;
+}
+
+.txt-color{
+  background-color: rgb(255, 238, 0);
+  text-align: center;
+
+}
+
+.up-chevron{
+  color: red;
+}
+
+.down-chevron{
+  color: green;
+}
+
+.medium{
+  color: orange;
 }

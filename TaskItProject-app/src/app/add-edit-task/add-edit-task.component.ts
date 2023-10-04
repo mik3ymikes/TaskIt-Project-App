@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Task } from "./add-task.model"
 
 @Component({
   selector: 'app-add-edit-task',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./add-edit-task.component.css']
 })
 export class AddEditTaskComponent {
+
+// tasks: Task[]=[
+//   new Task()
+// ]
 
 }
