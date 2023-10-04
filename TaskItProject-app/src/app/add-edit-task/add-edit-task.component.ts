@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Task } from "./add-task.model"
+// import { Task } from "./add-task.model"
 
 @Component({
   selector: 'app-add-edit-task',
@@ -9,7 +9,7 @@ import { Task } from "./add-task.model"
 export class AddEditTaskComponent {
 
 // tasks: Task[]=[
-//   new Task()
+//   new Task("test", "test", "test","test")
 // ]
 
 }
