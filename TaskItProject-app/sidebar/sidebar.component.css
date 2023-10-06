@@ -97,32 +97,114 @@ h3{
     height: 100%;
     background-color: rgba(0, 0, 0, 0.61);
     z-index: 1;
-    display: none;
+    /* display: none; */
 
 }
 
 
-.new-task-box{
+/* .new-task-box{
  position: absolute;
- /* left: 0;
- right: 0;
- top: 30%;
- margin: auto; */
+ display: flex;
 
-  /* justify-content: center;
-  align-items: center; */
+
   left: 50%;
   transform: translate(-50%, 0);
   top: 50%;
   transform: translate(-50%,-50%);
   height: 40%;
   width: 40%;
-  background-color: red;
+  background-color: white;
+  z-index: 2;
+
+
+
+} */
+
+
+.new-task-box{
+  position: absolute;
+  display: flex;
+
+
+   left: 50%;
+   transform: translate(-50%, 0);
+   top: 50%;
+   transform: translate(-50%,-50%);
+   height: 40%;
+   width: 40%;
+   background-color: white;
+   z-index: 2;
+
+
+
+ }
+
+
+
+
+.bi-x{
+ position: absolute;
+ right: 0;
 
 }
 
 
-.bi-x{
-  float: right;
- 
+.add-title{
+  font-weight: 650;
+  margin-left: 10%;
+  margin-top:8%;
+  margin-bottom:14px
+}
+
+
+
+
+
+
+
+
+
+
+
+.task-details{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+
+  flex-wrap: wrap;
+  gap: 10px;
+  /* justify-content: space-between */
+}
+
+
+.description-task, .title-task{
+  width: 50%;
+
+
+}
+
+.date-task{
+  width: 30%;
+}
+
+.priority-task, .status-task{
+  width: 30%;
+  align-self: flex-start;
+
+
+}
+
+
+
+
+
+.description-task{
+
+
+}
+
+
+
+.status-task{
+
 }
