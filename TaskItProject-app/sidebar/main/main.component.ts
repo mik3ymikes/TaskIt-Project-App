@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 // import { Task } from '../add-task.model';
-import { Task } from '../add-edit-task/add-task.model'
+import { Task } from '../../src/app/add-edit-task/add-task.model'
 
 
 @Component({
@@ -17,7 +17,7 @@ tasks: Task[]=[
 
 addIn(){
 
-  
+
 }
 
 }

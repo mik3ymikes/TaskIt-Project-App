@@ -102,3 +102,27 @@ h3{
 }
 
 
+.new-task-box{
+ position: absolute;
+ /* left: 0;
+ right: 0;
+ top: 30%;
+ margin: auto; */
+
+  /* justify-content: center;
+  align-items: center; */
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 50%;
+  transform: translate(-50%,-50%);
+  height: 40%;
+  width: 40%;
+  background-color: red;
+
+}
+
+
+.bi-x{
+  float: right;
+ 
+}
