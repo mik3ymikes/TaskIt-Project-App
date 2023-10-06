@@ -1,7 +1,9 @@
-<h2 class="title">Task List</h2>
 
-<div class="table-filters">
-  <h5>Filters:</h5>
+
+  <h2 class="title">Task List</h2>
+
+  <div class="table-filters">
+    <h5>Filters:</h5>
   <form action="">
     <select name="status" id="status">
       <option>Status</option>
@@ -17,7 +19,7 @@
     <option>Priority</option>
   </select>
 </form>
-<button class="btn btn-success add-task-btn">Add New Task </button>
+<button (click)="addIn()" class="btn btn-success add-task-btn">Add New Task </button>
 </div>
 
 <table *ngFor="let task of tasks" class="table task-table table-responsive">

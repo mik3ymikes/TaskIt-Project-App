@@ -8,11 +8,16 @@ import { Task } from '../add-edit-task/add-task.model'
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
+
 export class MainComponent {
 
 tasks: Task[]=[
   new Task("test", "test", "test","test")
 ]
 
+addIn(){
+
+  
+}
 
 }
