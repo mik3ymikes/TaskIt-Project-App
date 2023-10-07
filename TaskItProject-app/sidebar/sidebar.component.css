@@ -4,9 +4,7 @@
 
 }
 
-/* .container{
-  display: flex;
-} */
+
 
 body{
   display: grid;
@@ -22,11 +20,11 @@ body{
   flex-direction: column;
   grid-column: 1/2;
 
-  /* height: 100vh; */
+
 
   border-right: solid rgba(128, 128, 128, 0.199);
 
-  /* width: 18%; */
+
 
 }
 
@@ -64,14 +62,11 @@ h3{
 
 .photo1{
   border-radius: 50%;
-  /* position: relative; */
   top: 10px;
 }
 
 
 .info-con{
-  /* display: flex;
-  flex-direction: column; */
   border-top:solid rgba(128, 128, 128, 0.199);
   margin-top: auto;
   padding-top: 5%;
@@ -97,28 +92,12 @@ h3{
     height: 100%;
     background-color: rgba(0, 0, 0, 0.61);
     z-index: 1;
-    /* display: none; */
+    visibility: hidden;
 
 }
 
 
-/* .new-task-box{
- position: absolute;
- display: flex;
 
-
-  left: 50%;
-  transform: translate(-50%, 0);
-  top: 50%;
-  transform: translate(-50%,-50%);
-  height: 40%;
-  width: 40%;
-  background-color: white;
-  z-index: 2;
-
-
-
-} */
 
 
 .new-task-box{
@@ -134,11 +113,12 @@ h3{
    width: 40%;
    background-color: white;
    z-index: 2;
+   visibility: hidden;
  }
 
 .delete-task-box{
   position: absolute;
-  /* display: flex; */
+  visibility: hidden;
 
 
    left: 50%;
@@ -205,11 +185,6 @@ h3{
 
 
 
-
-
-
-
-
 .task-details{
   align-items: center;
   justify-content: center;
@@ -242,9 +217,3 @@ h3{
 
 
 
-
-
-/* .status-task{
-
-
-} */

@@ -6,17 +6,23 @@
     <h5>Filters:</h5>
   <form action="">
     <select name="status" id="status">
-      <option>Status</option>
+      <option value="Status">-Status-</option>
+      <option value="In Progress">In Progress</option>
+      <option value="Not Started">Not Started</option>
+
     </select>
 </form>
 <form action="">
-  <select name="status" id="status">
+  <select name="date" id="date">
     <option>Date</option>
   </select>
 </form>
 <form action="">
-  <select name="status" id="status">
-    <option>Priority</option>
+  <select name="priority" id="priority">
+    <option value="Priority">--Priority--</option>
+    <option value="High">High</option>
+    <option value="Medium">Medium</option>
+    <option value="Low">Low</option>
   </select>
 </form>
 <button (click)="addIn()" class="btn btn-success add-task-btn">Add New Task </button>
