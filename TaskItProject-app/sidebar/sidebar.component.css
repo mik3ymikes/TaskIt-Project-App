@@ -134,10 +134,35 @@ h3{
    width: 40%;
    background-color: white;
    z-index: 2;
-
-
-
  }
+
+.delete-task-box{
+  position: absolute;
+  display: flex;
+
+
+   left: 50%;
+   transform: translate(-50%, 0);
+   top: 50%;
+   transform: translate(-50%,-50%);
+   height: 40%;
+   width: 40%;
+   background-color: white;
+   z-index: 2;
+
+}
+
+/* .delete-title{
+  font-weight: 650;
+  margin-left: 10%;
+  margin-top:8%;
+  margin-bottom:14px
+} */
+
+
+
+
+
 
 
 
@@ -198,13 +223,9 @@ h3{
 
 
 
-/* .description-task{
 
 
-}
+/* .status-task{
 
-
-
-.status-task{
 
 } */
