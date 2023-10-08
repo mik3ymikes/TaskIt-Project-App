@@ -11,10 +11,11 @@ import { Component, Output, EventEmitter } from '@angular/core';
 
 export class MainComponent {
 
-// tasks: Task[]=[
-//   new Task("test", "test", "test","test")
-// ]
-
+  // tasks = [
+  //   { title: 'Task 1', dueDate: new Date('01/01/2022'), priority: 'High', status:'medium' },
+  //   { title: 'Task 2', dueDate: new Date('02/01/2022'), priority: 'Medium', status:'high' },
+  //   { title: 'Task 3', dueDate: new Date('03/01/2022'), priority: 'Low', status:'medium'},
+  // ];
 
 
 @Output() addIn =new EventEmitter<string>
@@ -25,9 +26,7 @@ emitEvent(){
 
 
 
-
-
-tasks:any;
+tasks:any
 
 
 

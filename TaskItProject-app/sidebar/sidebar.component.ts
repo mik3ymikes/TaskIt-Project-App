@@ -31,13 +31,16 @@ export class SidebarComponent {
   }
 
 
+  tasks:any
 
 
 taskForm:FormGroup
 
 constructor(public fb:FormBuilder){
+  this.tasks=[]
+
   this.taskForm=this.fb.group({
-    name:[""],
+    title:[""],
     due:[""],
     priority:[""],
     status:[""]
@@ -49,9 +52,9 @@ constructor(public fb:FormBuilder){
 
 
   createData(){
-
+  this.tasks.push(this.taskForm.value)
+  // this.taskForm.reset()
   }
-
 
 
 }
