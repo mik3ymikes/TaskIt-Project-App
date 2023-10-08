@@ -1,4 +1,5 @@
 import { Component} from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { User } from './sidebar.model'
 
 @Component({
@@ -29,6 +30,31 @@ export class SidebarComponent {
     this.getOpacity=0;
   }
 
+
+
+
+taskForm:FormGroup
+
+constructor(public fb:FormBuilder){
+  this.taskForm=this.fb.group({
+    name:[""],
+    due:[""],
+    priority:[""],
+    status:[""]
+
+
+  })
 }
+
+
+
+  createData(){
+
+  }
+
+
+
+}
+
 
 

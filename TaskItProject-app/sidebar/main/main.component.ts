@@ -1,6 +1,6 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 // import { Task } from '../add-task.model';
-import { Task } from '../../src/app/add-edit-task/add-task.model'
+// import { Task } from './add-edit-task/add-task.model'
 
 
 @Component({
@@ -11,9 +11,10 @@ import { Task } from '../../src/app/add-edit-task/add-task.model'
 
 export class MainComponent {
 
-tasks: Task[]=[
-  new Task("test", "test", "test","test")
-]
+// tasks: Task[]=[
+//   new Task("test", "test", "test","test")
+// ]
+
 
 
 @Output() addIn =new EventEmitter<string>
@@ -24,8 +25,13 @@ emitEvent(){
 
 
 
-// addIn(){
 
-// }
+
+tasks:any;
+
+
+
+
+
 
 }
