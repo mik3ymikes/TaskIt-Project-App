@@ -19,6 +19,15 @@ export class SidebarComponent {
     "name", "Email@email.com")
   ]
 
+  addInTask(){
+    this.isHidden=false
+    this.getOpacity=100
+  }
+
+  exitTask(){
+    this.isHidden=true;
+    this.getOpacity=0;
+  }
 
 }
 
