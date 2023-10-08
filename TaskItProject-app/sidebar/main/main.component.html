@@ -1,5 +1,5 @@
 
-
+<!-- <app-sidebar></app-sidebar> -->
   <h2 class="title">Task List</h2>
 
   <div class="table-filters">
@@ -25,7 +25,8 @@
     <option value="Low">Low</option>
   </select>
 </form>
-<button (click)="addIn()" class="btn btn-success add-task-btn">Add New Task </button>
+<!-- <button (click)="addIn()" class="btn btn-success add-task-btn">Add New Task </button> -->
+<button (click)="emitEvent()" class="btn btn-success add-task-btn">Add New Task </button>
 </div>
 
 <table *ngFor="let task of tasks" class="table task-table table-responsive">

@@ -101,26 +101,25 @@ h3{
 
 
 .new-task-box{
-  position: absolute;
   display: flex;
-   left: 50%;
-   transform: translate(-50%, 0);
-   top: 50%;
-   transform: translate(-50%,-50%);
-   height: 40%;
-   width: 40%;
-   background-color: white;
-   z-index: 2;
-   visibility: hidden;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 50%;
+  transform: translate(-50%,-50%);
+  height: 40%;
+  width: 40%;
+  background-color: white;
+  z-index: 2;
+
+  /* visibility: hidden; */
  }
 
 
 
 .delete-task-box{
   position: absolute;
-  visibility: hidden;
-
-
+  /* visibility: hidden; */
    left: 50%;
    transform: translate(-50%, 0);
    top: 50%;
