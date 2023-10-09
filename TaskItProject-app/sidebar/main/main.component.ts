@@ -32,18 +32,29 @@ taskForm: FormGroup;
 tasks:any[];
 
 
+
 constructor(private fb:FormBuilder){
   this.tasks=[]
+
 
   this.taskForm=this.fb.group({
     title:['', Validators.required],
     due:['', Validators.required],
     priority:['', Validators.required],
-    status:['', Validators.required]
+    status:['', Validators.required],
+    description:['', Validators.required]
 
 
   })
 }
+
+
+isHidden=true;
+  // isHidden2=true;
+  isHidden3=true;
+  getOpacity=0;
+
+
 
 
 
@@ -51,28 +62,16 @@ constructor(private fb:FormBuilder){
   this.tasks.push(this.taskForm.value)
   // console.log(this.tasks.push(this.taskForm.value))
   this.taskForm.reset()
+  this.isHidden=true;
+    this.getOpacity=0;
   }
 
 
+  popUp(){
+    this.isHidden=false
+    this.isHidden3=false
+  }
 
-
-// ngOnInit(){
-
-// }
-
-
-
-
-
-
-
-
-
-
-isHidden=true;
-  // isHidden2=true;
-  isHidden3=true;
-  getOpacity=0;
 
 
   addIn(){
@@ -84,7 +83,25 @@ isHidden=true;
     this.isHidden=true;
     this.getOpacity=0;
   }
+  exitTask2(){
+    this.isHidden=true;
+    this.isHidden3=true
+  }
 
+
+reset(){
+  this.taskForm.reset()
+  this.isHidden=true;
+    this.getOpacity=0;
+}
+
+
+removeTask(e){
+this.tasks.forEach((value,index) =>{
+  if(value==e)
+  this.tasks.splice(index,1)
+})
+}
 
 
 }

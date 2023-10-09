@@ -48,18 +48,17 @@ h5{
 }
 
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.61);
+  z-index: 1;
+  /* visibility: hidden; */
 
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 
@@ -80,12 +79,59 @@ h5{
 
 
 
+.delete-task-box{
+  position: absolute;
+  /* visibility: hidden; */
+   left: 50%;
+   transform: translate(-50%, 0);
+   top: 50%;
+   transform: translate(-50%,-50%);
+   height: 40%;
+   width: 40%;
+   background-color: white;
+   z-index: 2
+
+}
+
+
+
+
+.delete-con{
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+
+}
+
+.del-btn{
+  padding: 6px;
+  width: 90px;
+
+
+}
+
+
+
+
+.delete-title{
+  font-weight: 650;
+  display: block
+}
 
 
 
 
 
+.bi-x{
+ position: absolute;
+ right: 0;
 
+}
 
 
 .add-title{
@@ -111,8 +157,6 @@ h5{
 }
 
 
-
-
 .description-task, .title-task{
   width: 50%;
 
@@ -131,21 +175,20 @@ h5{
 }
 
 
-.bi-x{
-  position: absolute;
-  right: 0;
-}
 
 
 
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.61);
-  z-index: 1;
-  /* visibility: hidden; */
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
