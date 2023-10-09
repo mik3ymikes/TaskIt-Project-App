@@ -31,30 +31,30 @@ export class SidebarComponent {
   }
 
 
-  tasks:any
+//   tasks:any
 
 
-taskForm:FormGroup
+// taskForm:FormGroup
 
-constructor(public fb:FormBuilder){
-  this.tasks=[]
+// constructor(public fb:FormBuilder){
+//   this.tasks=[]
 
-  this.taskForm=this.fb.group({
-    title:[""],
-    due:[""],
-    priority:[""],
-    status:[""]
-
-
-  })
-}
+//   this.taskForm=this.fb.group({
+//     title:[""],
+//     due:[""],
+//     priority:[""],
+//     status:[""]
 
 
+//   })
+// }
 
-  createData(){
-  this.tasks.push(this.taskForm.value)
-  // this.taskForm.reset()
-  }
+
+
+//   createData(){
+//   this.tasks.push(this.taskForm.value)
+//   // this.taskForm.reset()
+//   }
 
 
 }
