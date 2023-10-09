@@ -67,10 +67,10 @@ isHidden=true;
   }
 
 
-  popUp(){
-    this.isHidden=false
-    this.isHidden3=false
-  }
+  // popUp(){
+  //   this.isHidden=false
+  //   this.isHidden3=false
+  // }
 
 
 
@@ -93,6 +93,18 @@ reset(){
   this.taskForm.reset()
   this.isHidden=true;
     this.getOpacity=0;
+}
+
+
+showTask(task){
+  const taskInfo = `
+  Title: ${task.title}
+  Due Date: ${task.due}
+  Priority: ${task.priority}
+  Status: ${task.status}
+  Description: ${task.description}
+`;
+alert(taskInfo);
 }
 
 
