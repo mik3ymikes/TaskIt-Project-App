@@ -31,6 +31,19 @@ export class SidebarComponent {
   }
 
 
+  // toTask(){
+  // location.href="/"
+
+  // }
+
+  // toKanban(){
+  //   // location.href="/kanban"
+  //   // routerLink="/kanban"
+
+  //   }
+
+
+
 //   tasks:any
 
 
