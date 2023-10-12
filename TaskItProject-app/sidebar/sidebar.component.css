@@ -16,6 +16,17 @@
 
 
 
+.side-container{
+  display: flex;
+  flex-direction: column;
+  grid-column: 1/2;
+
+
+
+  border-right: solid rgba(128, 128, 128, 0.199);
+}
+
+
 
 .bar{
  width: 100%;
@@ -31,7 +42,7 @@
   justify-content: center;
   padding: 10px;
   border-radius: 12px;
-  display: inline-block;
+  /* display: inline-block; */
   margin: 0 auto;
   margin-top: 15%;
   width: 80%;
