@@ -8,19 +8,19 @@
 
 }
 
-/* 
+
 body{
   display: grid;
   grid-template-columns: 18% 1fr 10%;
 
 
 
-} */
+}
 
 
 
-
-/* .main{
+/*
+.main{
   grid-column: 2/3;
 
 } */

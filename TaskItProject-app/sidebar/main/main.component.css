@@ -177,12 +177,6 @@ h5{
 
 
 
-/* .main{
-  grid-column: 2/3;
-
-} */
-
-
 
 body{
   display: grid;
@@ -215,4 +209,12 @@ body{
 
 
 
+
+
+
+
+/* .main{
+  grid-column: 2/3;
+
+} */
 
