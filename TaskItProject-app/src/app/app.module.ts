@@ -12,7 +12,7 @@ import { DeleteTaskComponent } from './delete-task/delete-task.component';
 import { KanbanBoardComponent } from '../../sidebar/main/kanban-board/kanban-board.component';
 
 const appRoutes:Routes=[
-  {path:'', component: SidebarComponent},
+  {path:'', component: MainComponent},
   {path:'kanban', component: KanbanBoardComponent}
 ]
 
@@ -31,8 +31,6 @@ const appRoutes:Routes=[
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes)
-
 
 
   ],

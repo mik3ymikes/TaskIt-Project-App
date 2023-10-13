@@ -184,6 +184,26 @@ h5{
 
 
 
+body{
+  display: grid;
+  grid-template-columns: 18% 1fr 10%;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

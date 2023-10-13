@@ -1,12 +1,12 @@
 
-
-<!-- <body> -->
+<!-- <router-outlet></router-outlet> -->
+<body>
 
     <div class="side-container">
       <div class="bar">
       <h3><span class="text-success">TASK</span>IT</h3>
       <div class="btn-con">
-        <a routerLink=""> <button  class="btn btn-light task-list-btn">Task List</button></a>
+        <a routerLink=""> <button class="btn btn-light task-list-btn">Task List</button></a>
         <a routerLink="/kanban"><button class="btn btn-success task-list-btn">KanBan</button> </a>
       </div>
         <div *ngFor="let user of users" class="info-con">
@@ -30,10 +30,10 @@
         </div>
       </div>
 
-      <!-- <div class="main">
+      <div class="main">
         <app-main></app-main>
-      </div> -->
+      </div>
 
 
 
-<!-- </body> -->
+  </body>

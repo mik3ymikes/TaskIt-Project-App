@@ -8,19 +8,32 @@
 
 }
 
-
+/* 
 body{
   display: grid;
   grid-template-columns: 18% 1fr 10%;
-   /* height: 100vh; */
-
-
-}
 
 
 
+} */
 
-.main{
+
+
+
+/* .main{
   grid-column: 2/3;
 
-}
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
