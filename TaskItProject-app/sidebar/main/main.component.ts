@@ -20,22 +20,24 @@ export class MainComponent  {
   // ];
 
 
-// @Output() addIn =new EventEmitter<string>
+  // @Output() addIn =new EventEmitter<string>
 
-// emitEvent(){
-//   this.addIn.emit()
-// }
+  // emitEvent(){
+    //   this.addIn.emit()
+    // }
 
 
 
-taskForm: FormGroup;
-tasks:any[];
+    taskForm: FormGroup;
+    tasks:any[];
+    blah:any[];
+
 
 
 
 constructor(private fb:FormBuilder){
   this.tasks=[]
-
+  this.blah=[]
 
   this.taskForm=this.fb.group({
     title:['', Validators.required],
@@ -60,13 +62,12 @@ isHidden=true;
 
 
   createData(){
-   let blah=[]
   // let savedData=[]
   this.tasks.push(this.taskForm.value)
-  blah.push(this.taskForm.value)
+  this.blah.push(this.taskForm.value)
 
   // let blah=JSON.stringify(this.taskForm.value)
-  localStorage.setItem('savedData', JSON.stringify(blah))
+  localStorage.setItem('savedData', JSON.stringify(this.blah))
   // console.log(this.tasks.push(this.taskForm.value))
   this.taskForm.reset()
   this.isHidden=true;
