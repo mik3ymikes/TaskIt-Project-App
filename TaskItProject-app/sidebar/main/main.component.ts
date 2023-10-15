@@ -46,6 +46,7 @@ constructor(private fb:FormBuilder){
 
 
   })
+
 }
 
 
@@ -59,11 +60,18 @@ isHidden=true;
 
 
   createData(){
+   let blah=[]
+  // let savedData=[]
   this.tasks.push(this.taskForm.value)
+  blah.push(this.taskForm.value)
+
+  // let blah=JSON.stringify(this.taskForm.value)
+  localStorage.setItem('savedData', JSON.stringify(blah))
   // console.log(this.tasks.push(this.taskForm.value))
   this.taskForm.reset()
   this.isHidden=true;
     this.getOpacity=0;
+    console.log(localStorage)
   }
 
 
