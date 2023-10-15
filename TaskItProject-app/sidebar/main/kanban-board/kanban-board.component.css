@@ -9,8 +9,12 @@ body{
   display: grid;
   grid-template-columns: 18% 1fr 10%;
 
+}
 
-
+h2{
+margin-top: 5%;
+margin-left: 4%;
+margin-bottom: 2%;
 }
 
 
@@ -20,16 +24,28 @@ body{
 
 }
 
+.headCon{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
 .kaFle{
   display: flex;
-  justify-content: space-around;
-  height: 70%;
+  width: 100%;
+  /* justify-content: space-around; */
+  height: 75%;
+  gap: 2%;
+  margin-left: 3%;
+
 
 
 }
 
-.inProg{
-  background-color: gray;
+.inProg, .toDo, .done{
+  background-color: rgba(128, 128, 128, 0.13);
+  width: 33%;
+
   /* width: 100%; */
 
 }
