@@ -30,15 +30,15 @@ export class MainComponent  {
 
     taskForm: FormGroup;
     tasks:any[];
-    blah:any[];
+    // blah:any[];
 
 
 
 
-constructor(private fb:FormBuilder){
-  this.tasks=[]
-  this.blah=[]
-
+    constructor(private fb:FormBuilder){
+      // this.tasks=[]
+      this.tasks= JSON.parse(localStorage.getItem('savedData')) || []
+      // this.task(blah)
   this.taskForm=this.fb.group({
     title:['', Validators.required],
     due:['', Validators.required],
@@ -64,10 +64,11 @@ isHidden=true;
   createData(){
   // let savedData=[]
   this.tasks.push(this.taskForm.value)
-  this.blah.push(this.taskForm.value)
+  // this.blah.push(this.taskForm.value)
 
   // let blah=JSON.stringify(this.taskForm.value)
-  localStorage.setItem('savedData', JSON.stringify(this.blah))
+  // localStorage.setItem('savedData', JSON.stringify(this.blah))
+  localStorage.setItem('savedData', JSON.stringify(this.tasks))
   // console.log(this.tasks.push(this.taskForm.value))
   this.taskForm.reset()
   this.isHidden=true;
