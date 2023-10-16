@@ -73,7 +73,7 @@ isHidden=true;
   this.taskForm.reset()
   this.isHidden=true;
     this.getOpacity=0;
-    console.log(localStorage)
+
   }
 
 
@@ -121,8 +121,14 @@ alert(taskInfo);
 removeTask(e){
 this.tasks.forEach((value,index) =>{
   if(value==e)
+  // this.tasks.splice(index,1)
   this.tasks.splice(index,1)
+  localStorage.setItem('savedData', JSON.stringify(this.tasks))
+
+  // localStorage.removeItem()
+
 })
+// this.tasks= JSON.parse(localStorage.getItem('savedData'))
 }
 
 
