@@ -28,6 +28,8 @@ this.outputLocalStorageData()
   outputLocalStorageData(){
     const localStorageData = this.localStorageService.getData('savedData');
     console.log('Local Storage Data:', localStorageData);
+  
+
   }
 
 }
