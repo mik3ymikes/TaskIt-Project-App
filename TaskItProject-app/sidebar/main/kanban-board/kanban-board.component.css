@@ -56,9 +56,16 @@ margin-bottom: 2%;
 
 .test{
   margin: 0 auto;
-  height: 12%;
+  height: 15%;
   margin-top: 10px;
-
+  font-size: 1em;
   width: 90%;
   background-color: white;
+}
+
+
+.kan-title{
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
 }

@@ -1,5 +1,6 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+// import { Injectable } from '@angular/core';
 // import {ReactiveFormsModule} from '@angular/forms';
 // import { Task } from '../add-task.model';
 // import { Task } from './add-edit-task/add-task.model'
@@ -13,11 +14,6 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 export class MainComponent  {
 
-  // tasks = [
-  //   { title: 'Task 1', dueDate: new Date('01/01/2022'), priority: 'High', status:'medium' },
-  //   { title: 'Task 2', dueDate: new Date('02/01/2022'), priority: 'Medium', status:'high' },
-  //   { title: 'Task 3', dueDate: new Date('03/01/2022'), priority: 'Low', status:'medium'},
-  // ];
 
 
   // @Output() addIn =new EventEmitter<string>
@@ -38,6 +34,7 @@ export class MainComponent  {
     constructor(private fb:FormBuilder){
       // this.tasks=[]
       this.tasks= JSON.parse(localStorage.getItem('savedData')) || []
+
       // this.task(blah)
   this.taskForm=this.fb.group({
     title:['', Validators.required],
@@ -62,7 +59,7 @@ isHidden=true;
 
 
   createData(){
-  // let savedData=[]
+
   this.tasks.push(this.taskForm.value)
   // this.blah.push(this.taskForm.value)
 
