@@ -1,13 +1,15 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { localStorageService } from './local-storage.service';
+
 // import {ReactiveFormsModule} from '@angular/forms';
 // import { Task } from '../add-task.model';
 // import { Task } from './add-edit-task/add-task.model'
-import { Injectable } from '@angular/core';
+// import { Injectable } from '@angular/core';
 
-@Injectable({
-  providedIn:'root'
-})
+// @Injectable({
+//   providedIn:'root'
+// })
 
 
 @Component({
@@ -20,26 +22,24 @@ export class MainComponent  {
 
 
 
-  // @Output() addIn =new EventEmitter<string>
 
-  // emitEvent(){
-    //   this.addIn.emit()
-    // }
 
 
 
     taskForm: FormGroup;
     tasks:any[];
-    // blah:any[];
 
 
 
 
-    constructor(private fb:FormBuilder){
-      // this.tasks=[]
-      this.tasks= JSON.parse(localStorage.getItem('savedData')) || []
 
-      // this.task(blah)
+    constructor(private fb:FormBuilder, private localStorageService: localStorageService){
+      
+      //below is last known to work if mess up
+      // this.tasks= JSON.parse(localStorage.getItem('savedData')) || []
+      this.tasks = this.localStorageService.getData('savedData') || [];
+
+
   this.taskForm=this.fb.group({
     title:['', Validators.required],
     due:['', Validators.required],
@@ -51,6 +51,11 @@ export class MainComponent  {
   })
 
 }
+
+
+
+
+
 
 
 isHidden=true;
@@ -65,12 +70,10 @@ isHidden=true;
   createData(){
 
   this.tasks.push(this.taskForm.value)
-  // this.blah.push(this.taskForm.value)
+ //below is las known to work if need to reset
+  // localStorage.setItem('savedData', JSON.stringify(this.tasks))
+  this.localStorageService.setData('savedData', this.tasks);
 
-  // let blah=JSON.stringify(this.taskForm.value)
-  // localStorage.setItem('savedData', JSON.stringify(this.blah))
-  localStorage.setItem('savedData', JSON.stringify(this.tasks))
-  // console.log(this.tasks.push(this.taskForm.value))
   this.taskForm.reset()
   this.isHidden=true;
     this.getOpacity=0;
@@ -123,14 +126,16 @@ alert(taskInfo);
 removeTask(e){
 this.tasks.forEach((value,index) =>{
   if(value==e)
-  // this.tasks.splice(index,1)
-  this.tasks.splice(index,1)
-  localStorage.setItem('savedData', JSON.stringify(this.tasks))
 
-  // localStorage.removeItem()
+  this.tasks.splice(index,1)
+  this.localStorageService.setData('savedData', this.tasks);
+  //this first below last known to work if breaks
+  // localStorage.setItem('savedData', JSON.stringify(this.tasks))
+
+
 
 })
-// this.tasks= JSON.parse(localStorage.getItem('savedData'))
+
 }
 
 
