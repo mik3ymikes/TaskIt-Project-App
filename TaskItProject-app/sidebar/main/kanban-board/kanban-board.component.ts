@@ -1,12 +1,9 @@
-import { Component } from '@angular/core';
-// import { Injectable } from '@angular/core';
-// import { MainComponent } from '../main.component';
+import { Component, OnInit } from '@angular/core';
+import { localStorageService } from '../local-storage.service';
 
 
 
-// @Injectable({
-//   providedIn:'root'
-// })
+
 
 @Component({
   selector: 'app-kanban-board',
@@ -16,10 +13,21 @@ import { Component } from '@angular/core';
 })
 
 
+// export class KanbanBoardComponent{
+export class KanbanBoardComponent implements OnInit {
+tasks:any[]
 
-export class KanbanBoardComponent {
+constructor(private localStorageService:localStorageService){
+  this.tasks=this.localStorageService.getData('savedData') || []
+}
 
+ngOnInit(): void{
+this.outputLocalStorageData()
+  }
 
-
+  outputLocalStorageData(){
+    const localStorageData = this.localStorageService.getData('savedData');
+    console.log('Local Storage Data:', localStorageData);
+  }
 
 }
