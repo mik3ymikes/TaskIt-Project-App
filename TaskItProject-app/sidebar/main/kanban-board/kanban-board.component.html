@@ -20,7 +20,9 @@
     <div class="container kaFle">
 
       <div class="toDo">
-        <div *ngFor="let task of tasks" draggable="true" class="test">
+        <div *ngFor="let task of tasks"
+        cdkDropList [cdkDropListData]="list"
+        class="test">
           <div class="kan-title">
             <p>Title: {{task.title}} </p>
             <p>To Do🔽</p>

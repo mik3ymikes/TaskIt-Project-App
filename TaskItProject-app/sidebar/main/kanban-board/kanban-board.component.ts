@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { localStorageService } from '../local-storage.service';
-
+// import {NgFor} from '@angular/common';
+// import { CdkDragDrop,moveItemInArray,transferArrayItem} from '@angular/cdk/drag-drop';
 
 
 
@@ -9,6 +10,7 @@ import { localStorageService } from '../local-storage.service';
   selector: 'app-kanban-board',
   templateUrl: './kanban-board.component.html',
   styleUrls: ['./kanban-board.component.css'],
+
   // providers:[MainComponent]
 })
 
@@ -36,6 +38,42 @@ this.outputLocalStorageData()
 
 
 
+
+
+  // drop(event: CdkDragDrop<string[]>) {
+  //   if (event.previousContainer === event.container) {
+  //     moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+  //   } else {
+  //     transferArrayItem(
+  //       event.previousContainer.data,
+  //       event.container.data,
+  //       event.previousIndex,
+  //       event.currentIndex,
+  //     );
+  //   }
+
+
+
+
+  // }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   // getVal(){
   //   this.tasks.forEach(obj => {
   //    `title: ${obj.title}, due: ${obj.due},
@@ -50,5 +88,3 @@ this.outputLocalStorageData()
 
 
   // }
-
-}
