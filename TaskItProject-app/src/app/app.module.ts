@@ -10,7 +10,8 @@ import { MainComponent } from '../../sidebar/main/main.component';
 import { AddEditTaskComponent } from '../../sidebar/main/add-edit-task/add-edit-task.component';
 import { DeleteTaskComponent } from './delete-task/delete-task.component';
 import { KanbanBoardComponent } from '../../sidebar/main/kanban-board/kanban-board.component';
-// import { CdkDragDrop,moveItemInArray,transferArrayItem} from '@angular/cdk/drag-drop';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+
 
 const appRoutes:Routes=[
   {path:'', component: MainComponent},
@@ -32,6 +33,7 @@ const appRoutes:Routes=[
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     ReactiveFormsModule,
+    DragDropModule
 
 
   ],

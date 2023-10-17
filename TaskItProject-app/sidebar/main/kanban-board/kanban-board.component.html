@@ -18,11 +18,15 @@
   </div>
 
     <div class="container kaFle">
+    <!-- cdkDropList
+    #todoList="cdkDropList"
+    [cdkDropListData]="tasks"
+    [cdkDropListConnectedTo]="[doneList]"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)"> -->
 
-      <div class="toDo">
-        <div *ngFor="let task of tasks"
-        cdkDropList [cdkDropListData]="list"
-        class="test">
+      <div  class="toDo">
+        <div cdkDrag *ngFor="let task of tasks" class="test">
           <div class="kan-title">
             <p>Title: {{task.title}} </p>
             <p>To Do🔽</p>
