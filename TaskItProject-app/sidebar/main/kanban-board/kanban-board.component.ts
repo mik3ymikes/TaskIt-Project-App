@@ -23,13 +23,32 @@ constructor(private localStorageService:localStorageService){
 
 ngOnInit(): void{
 this.outputLocalStorageData()
+// this.getVal()
   }
+
 
   outputLocalStorageData(){
-    const localStorageData = this.localStorageService.getData('savedData');
-    console.log('Local Storage Data:', localStorageData);
-  
+    // const localStorageData = this.localStorageService.getData('savedData');
+    // console.log('Local Storage Data:', localStorageData);
+    console.log(this.tasks)
 
   }
+
+
+
+  // getVal(){
+  //   this.tasks.forEach(obj => {
+  //    `title: ${obj.title}, due: ${obj.due},
+  //    priority: ${obj.priority}, status: ${obj.status},
+  //    description: ${obj.description} `
+
+  //   console.log(obj.title)
+  //  })
+
+
+
+
+
+  // }
 
 }

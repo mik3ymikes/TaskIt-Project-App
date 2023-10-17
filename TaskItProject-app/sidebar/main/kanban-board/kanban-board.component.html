@@ -18,14 +18,15 @@
   </div>
 
     <div class="container kaFle">
+
       <div class="toDo">
-        <div draggable="true" class="test">
+        <div *ngFor="let task of tasks" draggable="true" class="test">
           <div class="kan-title">
-            <p>Title </p>
+            <p>Title: {{task.title}} </p>
             <p>To Do🔽</p>
           </div>
-          <p>Priority:</p>
-          <p>Due Date:</p>
+          <p>Priority: {{ task.priority }}</p>
+          <p>Due Date:{{ task.due }}</p>
         </div>
       </div>
 
