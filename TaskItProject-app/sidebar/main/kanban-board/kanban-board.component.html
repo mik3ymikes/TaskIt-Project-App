@@ -17,15 +17,14 @@
     <h4>Done</h4>
   </div>
 
-    <div class="container kaFle">
-    <!-- cdkDropList
+    <div class="container kaFle"  cdkDropListGroup>
+
+
+      <div  class="toDo"
+      cdkDropList
     #todoList="cdkDropList"
     [cdkDropListData]="tasks"
-    [cdkDropListConnectedTo]="[doneList]"
-    class="example-list"
-    (cdkDropListDropped)="drop($event)"> -->
-
-      <div  class="toDo">
+    (cdkDropListDropped)="drop($event)">
         <div cdkDrag *ngFor="let task of tasks" class="test">
           <div class="kan-title">
             <p>Title: {{task.title}} </p>
@@ -36,10 +35,17 @@
         </div>
       </div>
 
-      <div class="inProg">
+      <div class="inProg"  cdkDropList
+      #todoList="cdkDropList"
+      [cdkDropListData]="tasks"
+      (cdkDropListDropped)="drop($event)">
+      
       </div>
 
-      <div class="done">
+      <div class="done"  cdkDropList
+      #todoList="cdkDropList"
+      [cdkDropListData]="tasks"
+      (cdkDropListDropped)="drop($event)">
       </div>
 
     </div>
