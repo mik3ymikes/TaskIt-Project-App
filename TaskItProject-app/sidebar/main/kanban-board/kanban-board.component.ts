@@ -18,6 +18,7 @@ import { CdkDragDrop,moveItemInArray,transferArrayItem} from '@angular/cdk/drag-
 // export class KanbanBoardComponent{
 export class KanbanBoardComponent implements OnInit {
 tasks:any[]
+inProgress:any[]
 
 constructor(private localStorageService:localStorageService){
   this.tasks=this.localStorageService.getData('savedData') || []
@@ -39,6 +40,9 @@ this.outputLocalStorageData()
 
 
   drop(event: CdkDragDrop<string[]>) {
+
+
+     this.inProgress=[]
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
