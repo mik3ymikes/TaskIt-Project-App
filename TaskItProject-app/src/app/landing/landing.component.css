@@ -5,6 +5,16 @@
 }
 
 
+body{
+ height: 100vh;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+
+  /* background-color: red; */
+}
+
+
 .col{
   color: #008000;
 }
@@ -13,4 +23,59 @@
 .mainPic{
   height: 100px;
   width: 100px;
+}
+
+
+.lanPage{
+
+  height: 70%;
+  background-color: rgba(128, 128, 128, 0.089);
+  /* border: green solid; */
+  width: 50%;
+
+  text-align: center;
+ margin: 0% auto;
+
+
+
+
+}
+
+h1{
+  font-weight: 700;
+}
+
+p, h1{
+
+  margin-top: 3%;
+}
+
+
+.bGround{
+background-color: rgba(54, 255, 47, 0.329);
+display: flex;
+justify-content: center;
+align-items: center;
+height: 50%;
+width: 70%;
+margin: 0 auto;
+margin-top: 4%;
+}
+
+
+
+.signCon{
+  width: 100%;
+ /* justify-content: center;
+  margin: auto auto; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+}
+
+img{
+  height: 70%;
+  z-index: 2;
 }
