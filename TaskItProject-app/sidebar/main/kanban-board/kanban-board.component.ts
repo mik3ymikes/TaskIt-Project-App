@@ -30,8 +30,8 @@ import { CdkDragDrop,moveItemInArray,transferArrayItem, CdkDrag, CdkDropList} fr
 
     ngOnInit(): void{
       // this.outputLocalStorageData()
-      this.inProg=[]
-      this.done=[]
+      // this.inProg=[]
+      // this.done=[]
       // this.getVal()
     }
 
@@ -58,7 +58,7 @@ import { CdkDragDrop,moveItemInArray,transferArrayItem, CdkDrag, CdkDropList} fr
         event.currentIndex,
         );
       }
-      // this.saveDataToLocalStorage()
+      this.saveDataToLocalStorage()
     }
 
 
