@@ -20,32 +20,36 @@ import { CdkDragDrop,moveItemInArray,transferArrayItem, CdkDrag, CdkDropList} fr
     inProg:any[]
     done:any[]
 
+
+
     constructor(private localStorageService:localStorageService){
-      this.tasks=this.localStorageService.getData('savedData') || []
+      this.tasks = this.localStorageService.getData('savedData') || [];
+      this.inProg = this.localStorageService.getData('inProgData') || [];
+      this.done = this.localStorageService.getData('doneData') || [];
     }
 
     ngOnInit(): void{
-      this.outputLocalStorageData()
+      // this.outputLocalStorageData()
       this.inProg=[]
       this.done=[]
       // this.getVal()
     }
 
 
-    outputLocalStorageData(){
-      // const localStorageData = this.localStorageService.getData('savedData');
-      // console.log('Local Storage Data:', localStorageData);
-      console.log(this.tasks)
+    // outputLocalStorageData(){
+    //   // const localStorageData = this.localStorageService.getData('savedData');
+    //   // console.log('Local Storage Data:', localStorageData);
+    //   console.log(this.tasks)
 
-    }
+    // }
 
 
 
     drop(event: CdkDragDrop<string[]>) {
 
 
-    if (event.previousContainer === event.container) {
-      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+      if (event.previousContainer === event.container) {
+        moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
       transferArrayItem(
         event.previousContainer.data,
@@ -54,14 +58,19 @@ import { CdkDragDrop,moveItemInArray,transferArrayItem, CdkDrag, CdkDropList} fr
         event.currentIndex,
         );
       }
-      // console.log(this.inProg)
+      // this.saveDataToLocalStorage()
     }
 
+
+    saveDataToLocalStorage() {
+      this.localStorageService.setData('savedData', this.tasks);
+      this.localStorageService.setData('inProgData', this.inProg);
+      this.localStorageService.setData('doneData', this.done);
 
   }
 
 
-
+  }
 
 
 
@@ -125,4 +134,4 @@ import { CdkDragDrop,moveItemInArray,transferArrayItem, CdkDrag, CdkDropList} fr
 
 
 
-  // }
+  //
