@@ -23,7 +23,7 @@ import { CdkDragDrop,moveItemInArray,transferArrayItem, CdkDrag, CdkDropList} fr
 
 
     constructor(private localStorageService:localStorageService){
-      this.tasks = this.localStorageService.getData('savedData') || [];
+      this.tasks = this.localStorageService.getData('savedData' ) || [];
       this.inProg = this.localStorageService.getData('inProgData') || [];
       this.done = this.localStorageService.getData('doneData') || [];
     }

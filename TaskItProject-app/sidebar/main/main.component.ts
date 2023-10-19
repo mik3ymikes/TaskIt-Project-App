@@ -36,11 +36,16 @@ export class MainComponent  {
 
     constructor(private fb:FormBuilder, private localStorageService: localStorageService){
 
-      //below is last known to work if mess up
-      // this.tasks= JSON.parse(localStorage.getItem('savedData')) || []
-      this.tasks = this.localStorageService.getData('savedData') || [];
+      this.tasks = this.localStorageService.getData('savedData' ) || [];
       this.inProg = this.localStorageService.getData('inProgData') || [];
       this.done = this.localStorageService.getData('doneData') || [];
+      // this.tasks = [...this.tasks, ...this.inProg, ...this.done] || []
+
+
+
+      //below is last known to work if mess up
+      // this.tasks= JSON.parse(localStorage.getItem('savedData')) || []
+
 
 
   this.taskForm=this.fb.group({
@@ -76,7 +81,7 @@ isHidden=true;
  //below is las known to work if need to reset
   // localStorage.setItem('savedData', JSON.stringify(this.tasks))
   this.localStorageService.setData('savedData', this.tasks);
- 
+
 
   this.taskForm.reset()
   this.isHidden=true;
