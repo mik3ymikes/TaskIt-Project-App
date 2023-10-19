@@ -3,7 +3,7 @@
 
   <div >
     <app-sidebar>
-      <!-- <button [disabled]="noWork"></button> -->
+      <button [disabled]="noWork"></button>
     </app-sidebar>
 
   </div>
@@ -44,7 +44,7 @@
 
       [cdkDropListData]="inProg"
       (cdkDropListDropped)="drop($event)">
-      <div cdkDrag *ngFor="let task of inProg" class=cards>
+      <div cdkDrag *ngFor="let task of inProg" class="cards">
         <div class="kan-title">
           <p>Title: {{task.title}} </p>
           <p>In Prog 🔼</p>
@@ -60,7 +60,7 @@
       <div class="done"  cdkDropList
       [cdkDropListData]="done"
       (cdkDropListDropped)="drop($event)">
-      <div cdkDrag *ngFor="let task of done" class=cards>
+      <div cdkDrag *ngFor="let task of done" class="cards">
         <div class="kan-title">
           <p>Title: {{task.title}} </p>
           <p>Done 🎯</p>

@@ -14,7 +14,7 @@ export class LandingComponent {
   tasks:any[]
   inProg:any[]
   done:any[]
-  // noWork=true
+  noWork=true
   // isItemsDisabled: boolean = true;
 
 
