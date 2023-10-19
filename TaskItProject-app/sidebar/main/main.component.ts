@@ -138,12 +138,19 @@ this.tasks.forEach((value,index) =>{
 
   this.tasks.splice(index,1)
   this.localStorageService.setData('savedData', this.tasks);
-  //this first below last known to work if breaks
-  // localStorage.setItem('savedData', JSON.stringify(this.tasks))
-
-
-
 })
+
+//   this.done.forEach((value,index) =>{
+//     if(value==e)
+
+//     this.done.splice(index,1)
+//     this.localStorageService.setData('doneData', this.tasks);
+
+
+
+
+
+// })
 
 }
 
