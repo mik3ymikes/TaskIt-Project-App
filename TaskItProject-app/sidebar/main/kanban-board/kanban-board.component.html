@@ -17,15 +17,15 @@
     <h4>Done</h4>
   </div>
 
-    <div class="container kaFle"  cdkDropListGroup>
 
+  <div class="container kaFle"  cdkDropListGroup>
 
       <div  class="toDo"
       cdkDropList
-    #todoList="cdkDropList"
+
     [cdkDropListData]="tasks"
     (cdkDropListDropped)="drop($event)">
-        <div cdkDrag *ngFor="let task of tasks" class="test">
+        <div cdkDrag *ngFor="let task of tasks" cdkDrag class="test">
           <div class="kan-title">
             <p>Title: {{task.title}} </p>
             <p>To Do🔽</p>
@@ -36,21 +36,40 @@
       </div>
 
       <div class="inProg"  cdkDropList
-      #todoList="cdkDropList"
-      [cdkDropListData]="tasks"
+
+      [cdkDropListData]="inProg"
       (cdkDropListDropped)="drop($event)">
-
-
+      <div cdkDrag *ngFor="let task of inProg" class=test>
+        <div class="kan-title">
+          <p>Title: {{task.title}} </p>
+          <p>In Prog 🔼</p>
+        </div>
+        <p>Priority: {{ task.priority }}</p>
+        <p>Due Date:{{ task.due }}</p>
+      </div>
       </div>
 
+
+
+
       <div class="done"  cdkDropList
-      #todoList="cdkDropList"
-      [cdkDropListData]="tasks"
+      [cdkDropListData]="done"
       (cdkDropListDropped)="drop($event)">
+      <div cdkDrag *ngFor="let task of done" class=test>
+        <div class="kan-title">
+          <p>Title: {{task.title}} </p>
+          <p>Done 🎯</p>
+        </div>
+        <p>Priority: {{ task.priority }}</p>
+        <p>Due Date:{{ task.due }}</p>
+      </div>
       </div>
 
     </div>
   </div>
+
+
+
 
 </body>
 

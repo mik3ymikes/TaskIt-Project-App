@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { localStorageService } from '../local-storage.service';
 // import {NgFor} from '@angular/common';
-import { CdkDragDrop,moveItemInArray,transferArrayItem} from '@angular/cdk/drag-drop';
+import { CdkDragDrop,moveItemInArray,transferArrayItem, CdkDrag, CdkDropList} from '@angular/cdk/drag-drop';
 
 
 
@@ -11,38 +11,39 @@ import { CdkDragDrop,moveItemInArray,transferArrayItem} from '@angular/cdk/drag-
   templateUrl: './kanban-board.component.html',
   styleUrls: ['./kanban-board.component.css'],
 
-  // providers:[MainComponent]
 })
 
 
 // export class KanbanBoardComponent{
-export class KanbanBoardComponent implements OnInit {
-tasks:any[]
-inProgress:any[]
+  export class KanbanBoardComponent implements OnInit {
+    tasks:any[]
+    inProg:any[]
+    done:any[]
 
-constructor(private localStorageService:localStorageService){
-  this.tasks=this.localStorageService.getData('savedData') || []
-}
+    constructor(private localStorageService:localStorageService){
+      this.tasks=this.localStorageService.getData('savedData') || []
+    }
 
-ngOnInit(): void{
-this.outputLocalStorageData()
-// this.getVal()
-  }
-
-
-  outputLocalStorageData(){
-    // const localStorageData = this.localStorageService.getData('savedData');
-    // console.log('Local Storage Data:', localStorageData);
-    console.log(this.tasks)
-
-  }
+    ngOnInit(): void{
+      this.outputLocalStorageData()
+      this.inProg=[]
+      this.done=[]
+      // this.getVal()
+    }
 
 
+    outputLocalStorageData(){
+      // const localStorageData = this.localStorageService.getData('savedData');
+      // console.log('Local Storage Data:', localStorageData);
+      console.log(this.tasks)
 
-  drop(event: CdkDragDrop<string[]>) {
+    }
 
 
-     this.inProgress=[]
+
+    drop(event: CdkDragDrop<string[]>) {
+
+
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
@@ -51,13 +52,14 @@ this.outputLocalStorageData()
         event.container.data,
         event.previousIndex,
         event.currentIndex,
-      );
+        );
+      }
+      // console.log(this.inProg)
     }
+
+
   }
 
-
-
-}
 
 
 
