@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef} from '@angular/core';
 // import { localStorageService } from '../local-storage.service';
 // import {NgFor} from '@angular/common';
 import { CdkDragDrop,moveItemInArray,transferArrayItem, CdkDrag, CdkDropList} from '@angular/cdk/drag-drop';
@@ -11,9 +11,11 @@ import { CdkDragDrop,moveItemInArray,transferArrayItem, CdkDrag, CdkDropList} fr
 })
 
 export class LandingComponent {
+
   tasks:any[]
   inProg:any[]
   done:any[]
+
   noWork=true
   // isItemsDisabled: boolean = true;
 

@@ -1,80 +1,15 @@
 
-<div class="kan-con">
+<div>
+  <h1>Welcome to <span class="col">TASK</span>IT</h1>
 
-  <div >
-    <app-sidebar>
-      <button [disabled]="noWork"></button>
-    </app-sidebar>
-
-  </div>
+  <p>This platform allows you to keep track of tasks professionally, domestically, and more. Sign up today to get work! </p>
 
 
+  <img class="mainPic" src="TaskItProject-app\src\app\landing\photo\landingPageImg.png" alt="">
 
-  <div class="kanCon">
-    <h2 [ngStyle]="{'font-weight': 700}">KanBan</h2>
+  <p>Create an account to get started today</p>
 
-  <div class="headCon">
-
-    <h4>To Do</h4>
-    <h4>In Progress</h4>
-    <h4>Done</h4>
-  </div>
-
-
-  <div class="container kaFle"  cdkDropListGroup>
-
-      <div  class="toDo"
-      cdkDropList
-
-    [cdkDropListData]="tasks"
-    (cdkDropListDropped)="drop($event)"
-    >
-        <div cdkDrag *ngFor="let task of tasks" cdkDrag class="cards"
-        >
-          <div class="kan-title">
-            <p>Title: {{task.title}} </p>
-            <p>To Do🔽</p>
-          </div>
-          <p>Priority: {{ task.priority }}</p>
-          <p>Due Date:{{ task.due }}</p>
-        </div>
-      </div>
-
-      <div class="inProg"  cdkDropList
-
-      [cdkDropListData]="inProg"
-      (cdkDropListDropped)="drop($event)">
-      <div cdkDrag *ngFor="let task of inProg" class="cards">
-        <div class="kan-title">
-          <p>Title: {{task.title}} </p>
-          <p>In Prog 🔼</p>
-        </div>
-        <p>Priority: {{ task.priority }}</p>
-        <p>Due Date:{{ task.due }}</p>
-      </div>
-      </div>
-
-
-
-
-      <div class="done"  cdkDropList
-      [cdkDropListData]="done"
-      (cdkDropListDropped)="drop($event)">
-      <div cdkDrag *ngFor="let task of done" class="cards">
-        <div class="kan-title">
-          <p>Title: {{task.title}} </p>
-          <p>Done 🎯</p>
-        </div>
-        <p>Priority: {{ task.priority }}</p>
-        <p>Due Date:{{ task.due }}</p>
-      </div>
-      </div>
-
-    </div>
-  </div>
-
-
-
-
+  <button>SignUp</button>
+<p>or</p>
+<a routerLink="/main"><button>login</button> </a>
 </div>
-
