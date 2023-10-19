@@ -11,10 +11,12 @@ import { AddEditTaskComponent } from '../../sidebar/main/add-edit-task/add-edit-
 import { DeleteTaskComponent } from './delete-task/delete-task.component';
 import { KanbanBoardComponent } from '../../sidebar/main/kanban-board/kanban-board.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { LandingComponent } from './landing/landing.component';
 
 
 const appRoutes:Routes=[
-  {path:'', component: MainComponent},
+  {path:'', component: LandingComponent},
+  {path:'main', component: MainComponent},
   {path:'kanban', component: KanbanBoardComponent}
 ]
 
@@ -26,6 +28,7 @@ const appRoutes:Routes=[
     AddEditTaskComponent,
     DeleteTaskComponent,
     KanbanBoardComponent,
+    LandingComponent,
 
   ],
 
