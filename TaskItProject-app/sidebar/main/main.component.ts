@@ -5,11 +5,11 @@ import { localStorageService } from './local-storage.service';
 // import {ReactiveFormsModule} from '@angular/forms';
 // import { Task } from '../add-task.model';
 // import { Task } from './add-edit-task/add-task.model'
-// import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 
-// @Injectable({
-//   providedIn:'root'
-// })
+@Injectable({
+  providedIn:'root'
+})
 
 
 @Component({

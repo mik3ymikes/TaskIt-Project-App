@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { MainComponent } from 'sidebar/main/main.component';
 
 @Component({
   selector: 'app-notifcations',
@@ -8,7 +9,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 export class NotifcationsComponent implements OnInit, OnDestroy{
  private
 
-constructor(){}
+constructor( private main:MainComponent){}
 
 
 
