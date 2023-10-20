@@ -1,0 +1,12 @@
+.notify{
+  visibility: hidden;
+  position: absolute;
+  /* right: 40%; */
+  left: 20%;
+
+  top: 3%;
+  height: 7%;
+  width: 140px;
+  background-color:red
+
+}
