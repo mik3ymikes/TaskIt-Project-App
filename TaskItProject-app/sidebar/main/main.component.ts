@@ -1,6 +1,7 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { localStorageService } from './local-storage.service';
+import { Subject } from 'rxjs';
 
 // import {ReactiveFormsModule} from '@angular/forms';
 // import { Task } from '../add-task.model';
@@ -26,74 +27,74 @@ export class MainComponent  {
 
 
 
-    taskForm: FormGroup;
-    tasks:any[];
-    inProg:any[]
-    done:any[]
+  taskForm: FormGroup;
+  tasks:any[];
+  inProg:any[]
+  done:any[]
 
 
 
 
-    constructor(private fb:FormBuilder, private localStorageService: localStorageService){
+  constructor(private fb:FormBuilder, private localStorageService: localStorageService){
 
-      this.tasks = this.localStorageService.getData('savedData' ) || [];
-      this.inProg = this.localStorageService.getData('inProgData') || [];
-      this.done = this.localStorageService.getData('doneData') || [];
-      // this.tasks = [...this.tasks, ...this.inProg, ...this.done] || []
-
-
-
-      //below is last known to work if mess up
-      // this.tasks= JSON.parse(localStorage.getItem('savedData')) || []
+    this.tasks = this.localStorageService.getData('savedData' ) || [];
+    this.inProg = this.localStorageService.getData('inProgData') || [];
+    this.done = this.localStorageService.getData('doneData') || [];
+    // this.tasks = [...this.tasks, ...this.inProg, ...this.done] || []
 
 
 
-  this.taskForm=this.fb.group({
-    title:['', Validators.required],
-    due:['', Validators.required],
-    priority:['', Validators.required],
-    status:['', Validators.required],
-    description:['', Validators.required]
-
-
-  })
-
-}
+    //below is last known to work if mess up
+    // this.tasks= JSON.parse(localStorage.getItem('savedData')) || []
 
 
 
+    this.taskForm=this.fb.group({
+      title:['', Validators.required],
+      due:['', Validators.required],
+      priority:['', Validators.required],
+      status:['', Validators.required],
+        description:['', Validators.required]
 
 
+      })
 
-
-isHidden=true;
-  // isHidden2=true;
-  isHidden3=true;
-  getOpacity=0;
+    }
 
 
 
 
 
-  createData(){
-
-  this.tasks.push(this.taskForm.value)
- //below is las known to work if need to reset
-  // localStorage.setItem('savedData', JSON.stringify(this.tasks))
-  this.localStorageService.setData('savedData', this.tasks);
 
 
-  this.taskForm.reset()
-  this.isHidden=true;
-    this.getOpacity=0;
+    isHidden=true;
+    // isHidden2=true;
+    isHidden3=true;
+    getOpacity=0;
 
-  }
 
 
-  // popUp(){
-  //   this.isHidden=false
-  //   this.isHidden3=false
-  // }
+
+
+    createData(){
+      // addTaskNotification=new Subject <task> ()
+      this.tasks.push(this.taskForm.value)
+      //below is las known to work if need to reset
+      // localStorage.setItem('savedData', JSON.stringify(this.tasks))
+      this.localStorageService.setData('savedData', this.tasks);
+
+
+      this.taskForm.reset()
+      this.isHidden=true;
+      this.getOpacity=0;
+
+    }
+
+
+    // popUp(){
+    //   this.isHidden=false
+    //   this.isHidden3=false
+    // }
 
 
 
