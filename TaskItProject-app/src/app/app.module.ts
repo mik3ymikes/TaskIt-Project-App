@@ -14,6 +14,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { LandingComponent } from './landing/landing.component';
 
 
+
 const appRoutes:Routes=[
   {path:'', component: LandingComponent},
   {path:'main', component: MainComponent},
@@ -29,6 +30,7 @@ const appRoutes:Routes=[
     DeleteTaskComponent,
     KanbanBoardComponent,
     LandingComponent,
+    
 
   ],
 
