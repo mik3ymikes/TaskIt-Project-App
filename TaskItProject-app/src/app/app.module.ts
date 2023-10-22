@@ -12,7 +12,7 @@ import { DeleteTaskComponent } from './delete-task/delete-task.component';
 import { KanbanBoardComponent } from '../../sidebar/main/kanban-board/kanban-board.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { LandingComponent } from './landing/landing.component';
-import { NotifcationsComponent } from './notifcations/notifcations.component';
+
 
 
 
@@ -31,8 +31,8 @@ const appRoutes:Routes=[
     DeleteTaskComponent,
     KanbanBoardComponent,
     LandingComponent,
-    NotifcationsComponent,
-    
+   
+
 
   ],
 

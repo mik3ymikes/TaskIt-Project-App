@@ -1,16 +1,19 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { localStorageService } from './local-storage.service';
-import { Subject } from 'rxjs';
+
+
+
+// import { Subject } from 'rxjs';
 
 // import {ReactiveFormsModule} from '@angular/forms';
 // import { Task } from '../add-task.model';
 // import { Task } from './add-edit-task/add-task.model'
-import { Injectable } from '@angular/core';
+// import { Injectable } from '@angular/core';
 
-@Injectable({
-  providedIn:'root'
-})
+// @Injectable({
+//   providedIn:'root'
+// })
 
 
 @Component({
@@ -19,7 +22,10 @@ import { Injectable } from '@angular/core';
   styleUrls: ['./main.component.css']
 })
 
+
+
 export class MainComponent  {
+  // notifyActivated=false
 
 
 
@@ -29,8 +35,9 @@ export class MainComponent  {
 
   taskForm: FormGroup;
   tasks:any[];
-  inProg:any[]
-  done:any[]
+  inProg:any[];
+  done:any[];
+
 
 
 
@@ -41,6 +48,13 @@ export class MainComponent  {
     this.inProg = this.localStorageService.getData('inProgData') || [];
     this.done = this.localStorageService.getData('doneData') || [];
     // this.tasks = [...this.tasks, ...this.inProg, ...this.done] || []
+
+
+
+
+    // this.notify.activatedEmitter.subscribe(didActivate=>{
+    //   this.notifyActivated=didActivate
+    // })
 
 
 
@@ -77,7 +91,7 @@ export class MainComponent  {
 
 
     createData(){
-      // addTaskNotification=new Subject <task> ()
+      // this.notify.activatedEmitter.next(true)
       this.tasks.push(this.taskForm.value)
       //below is las known to work if need to reset
       // localStorage.setItem('savedData', JSON.stringify(this.tasks))
