@@ -5,10 +5,15 @@
   <div class="main">
 
      <div [hidden]="isHidden" class="overlay">  </div>
-   
-     <div class="notify">
-      <h5>A Task was just    👀</h5>
-    </div>
+
+      <!-- <div [ngClass]="{'notify':notifyActivated}" >
+        <h5>A Task was just ! 👀</h5>
+
+      </div> -->
+     <!-- <div class="notify"> -->
+      <!-- <h5 *ngIf="notifyActivated">A Task was just {{a}}! 👀</h5> -->
+    <!-- </div> -->
+
     <h2 class="title">Task List</h2>
 
     <div class="table-filters">

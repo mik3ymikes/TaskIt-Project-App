@@ -1,6 +1,7 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { localStorageService } from './local-storage.service';
+import { notify } from '../../src/notifcations/notification.service';
 
 
 
@@ -32,29 +33,28 @@ export class MainComponent  {
 
 
 
-
   taskForm: FormGroup;
   tasks:any[];
   inProg:any[];
   done:any[];
+  notifyActivated=false
 
 
 
-
-
-  constructor(private fb:FormBuilder, private localStorageService: localStorageService){
+  constructor(private fb:FormBuilder, private localStorageService: localStorageService, private notify:notify){
 
     this.tasks = this.localStorageService.getData('savedData' ) || [];
     this.inProg = this.localStorageService.getData('inProgData') || [];
     this.done = this.localStorageService.getData('doneData') || [];
     // this.tasks = [...this.tasks, ...this.inProg, ...this.done] || []
+    console.log(notify)
 
 
 
 
-    // this.notify.activatedEmitter.subscribe(didActivate=>{
-    //   this.notifyActivated=didActivate
-    // })
+    this.notify.activatedEmitter.subscribe(didActivate=>{
+      this.notifyActivated=didActivate
+    })
 
 
 
@@ -91,7 +91,8 @@ export class MainComponent  {
 
 
     createData(){
-      // this.notify.activatedEmitter.next(true)
+      this.notify.activatedEmitter.next(true)
+      console.log(notify)
       this.tasks.push(this.taskForm.value)
       //below is las known to work if need to reset
       // localStorage.setItem('savedData', JSON.stringify(this.tasks))
