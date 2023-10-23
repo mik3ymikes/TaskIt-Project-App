@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 // import { FormBuilder, Validators} from '@angular/forms';
-import {ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {FormGroup} from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -31,7 +31,7 @@ const appRoutes:Routes=[
     DeleteTaskComponent,
     KanbanBoardComponent,
     LandingComponent,
-   
+
 
 
   ],
@@ -40,7 +40,9 @@ const appRoutes:Routes=[
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     ReactiveFormsModule,
-    DragDropModule
+    DragDropModule,
+    FormsModule
+
 
 
   ],

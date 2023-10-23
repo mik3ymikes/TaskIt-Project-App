@@ -143,14 +143,15 @@
 
                 <textarea class="description-task form-control" formControlName="description" name="" id=""  rows="6" placeholder="Description"></textarea>
 
-                <select class="priority-task form-control" formControlName="priority"  name="" id="">
-                  <option value="Priority">--Priority--</option>
+                <select class="priority-task form-control" formControlName="priority" name="priority" id="priority" [(ngModel)]="defaultPriority">
+                  <option value='Priority'>--Priority--</option>
                   <option value="High">High</option>
                   <option value="Medium">Medium</option>
                   <option value="Low">Low</option>
                 </select>
 
-                <select class="status-task form-control" formControlName="status" name="" id="">
+                <select class="status-task form-control" formControlName="status" name="status" id="stauts" [(ngModel)]="defaultPriority2">
+                  <!-- [ngModel]="'--Priority--'" -->
                   <option value="Status">--Status--</option>
                 <option value="In Progress">In Progress</option>
                 <option value="Not Started">Not Started</option>

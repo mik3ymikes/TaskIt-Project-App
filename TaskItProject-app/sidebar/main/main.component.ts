@@ -1,8 +1,9 @@
-import { Component, Output, EventEmitter, OnInit, OnDestroy} from '@angular/core';
+import { Component, Output, EventEmitter, OnInit, OnDestroy, NgModule} from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { localStorageService } from './local-storage.service';
 import { notify } from '../../src/notifcations/notification.service';
 import { Subscription, timeout } from 'rxjs';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -18,10 +19,12 @@ import { Subscription, timeout } from 'rxjs';
 
 export class MainComponent  {
   private activatedSub:Subscription
+
   // notifyActivated=false
 
 
-
+  defaultPriority = 'High'
+  defaultPriority2 = 'Not Started'
 
   taskForm: FormGroup;
   tasks:any[];
