@@ -6,10 +6,14 @@
 
      <div [hidden]="isHidden" class="overlay">  </div>
 
-      <!-- <div [ngClass]="{'notify':notifyActivated}" >
-        <h5>A Task was just ! 👀</h5>
+     <!-- <div class="notify">
+      A task was jsut
+     </div> -->
 
-      </div> -->
+      <div class="btn-success" [ngClass]="{'notify':notifyActivated}" >
+        <h5 *ngIf="notifyActivated" >A Task was just {{noted}}! 👀</h5>
+
+      </div>
      <!-- <div class="notify"> -->
       <!-- <h5 *ngIf="notifyActivated">A Task was just {{a}}! 👀</h5> -->
     <!-- </div> -->

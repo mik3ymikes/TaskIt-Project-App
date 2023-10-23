@@ -37,6 +37,7 @@ export class MainComponent  {
   tasks:any[];
   inProg:any[];
   done:any[];
+  noted:string
   notifyActivated=false
 
 
@@ -92,6 +93,7 @@ export class MainComponent  {
 
     createData(){
       this.notify.activatedEmitter.next(true)
+      this.noted="added"
       console.log(notify)
       this.tasks.push(this.taskForm.value)
       //below is las known to work if need to reset
