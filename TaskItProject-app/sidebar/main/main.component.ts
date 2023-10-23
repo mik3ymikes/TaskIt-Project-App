@@ -114,6 +114,25 @@ export class MainComponent  {
     }
 
 
+
+  // editTask(e, task){
+  //   // this.notify.activatedEmitter.next(true)
+  //   // this.noted="editted"
+  //   alert (this.localStorageService.getData('savedData', this.tasks))
+  //   this.tasks.forEach((value) =>{
+  //     if(value==e)
+
+  //     this.isHidden=false
+  //     this.getOpacity=100
+  //     // this.tasks.push(this.taskForm.value)
+  //     this.localStorageService.setData('savedData', this.tasks)
+  //   })
+  // }
+
+
+
+
+
     // popUp(){
     //   this.isHidden=false
     //   this.isHidden3=false
