@@ -30,9 +30,11 @@ export class MainComponent  {
   tasks:any[];
   inProg:any[];
   done:any[];
-  noted:string
-  state:string
-  notifyActivated=false
+  noted:string;
+  state:string;
+  // isActive:boolean;
+  notifyActivated=false;
+  isActive=false
 
 
 
@@ -105,14 +107,22 @@ export class MainComponent  {
       //below is las known to work if need to reset
       // localStorage.setItem('savedData', JSON.stringify(this.tasks))
       this.localStorageService.setData('savedData', this.tasks);
-
-
       this.taskForm.reset()
       this.isHidden=true;
       this.getOpacity=0;
       this.endNotify()
+      this.isActive=false
 
+    //  if (this.isActive) {
+    //   this.tasks.forEach((value,index) =>{
+    //       if(value==task)
+
+    //       this.tasks.splice(index,1)
+
+    //     })
+    //  }
     }
+
 
 
 
@@ -127,7 +137,7 @@ export class MainComponent  {
     });
     this.isHidden = false;
     this.getOpacity = 100;
-
+     this.isActive=true
 
 
     // this.tasks.forEach((value,index) =>{
