@@ -1,20 +1,10 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit, OnDestroy} from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { localStorageService } from './local-storage.service';
 import { notify } from '../../src/notifcations/notification.service';
+import { Subscription, timeout } from 'rxjs';
 
 
-
-// import { Subject } from 'rxjs';
-
-// import {ReactiveFormsModule} from '@angular/forms';
-// import { Task } from '../add-task.model';
-// import { Task } from './add-edit-task/add-task.model'
-// import { Injectable } from '@angular/core';
-
-// @Injectable({
-//   providedIn:'root'
-// })
 
 
 @Component({
@@ -25,10 +15,10 @@ import { notify } from '../../src/notifcations/notification.service';
 
 
 
+
 export class MainComponent  {
+  private activatedSub:Subscription
   // notifyActivated=false
-
-
 
 
 
@@ -39,6 +29,20 @@ export class MainComponent  {
   done:any[];
   noted:string
   notifyActivated=false
+
+
+
+  ngOnInit(){
+    this.activatedSub=this.notify.activatedEmitter.subscribe(didActivate=>{
+      this.notifyActivated=didActivate
+    })
+
+  }
+
+  ngOnDestroy():void{
+  this.activatedSub.unsubscribe()
+  }
+
 
 
 
@@ -53,14 +57,8 @@ export class MainComponent  {
 
 
 
-    this.notify.activatedEmitter.subscribe(didActivate=>{
-      this.notifyActivated=didActivate
-    })
 
 
-
-    //below is last known to work if mess up
-    // this.tasks= JSON.parse(localStorage.getItem('savedData')) || []
 
 
 
@@ -80,14 +78,18 @@ export class MainComponent  {
 
 
 
-
-
     isHidden=true;
     // isHidden2=true;
     isHidden3=true;
     getOpacity=0;
 
 
+
+    endNotify() {
+      setTimeout(() => {
+        this.notifyActivated = false;
+      }, 3000);
+    }
 
 
 
@@ -104,6 +106,7 @@ export class MainComponent  {
       this.taskForm.reset()
       this.isHidden=true;
       this.getOpacity=0;
+      this.endNotify()
 
     }
 
@@ -115,10 +118,10 @@ export class MainComponent  {
 
 
 
-  addIn(){
-    this.isHidden=false
-    this.getOpacity=100
-  }
+    addIn(){
+      this.isHidden=false
+      this.getOpacity=100
+    }
 
   exitTask(){
     this.isHidden=true;
@@ -130,8 +133,8 @@ export class MainComponent  {
   }
 
 
-reset(){
-  this.taskForm.reset()
+  reset(){
+    this.taskForm.reset()
   this.isHidden=true;
     this.getOpacity=0;
 }
@@ -151,6 +154,8 @@ alert(taskInfo);
 
 
 removeTask(e){
+  this.notify.activatedEmitter.next(true)
+  this.noted="deleted"
 this.tasks.forEach((value,index) =>{
   if(value==e)
 
@@ -158,18 +163,7 @@ this.tasks.forEach((value,index) =>{
   this.localStorageService.setData('savedData', this.tasks);
 })
 
-//   this.done.forEach((value,index) =>{
-//     if(value==e)
-
-//     this.done.splice(index,1)
-//     this.localStorageService.setData('doneData', this.tasks);
-
-
-
-
-
-// })
-
+this.endNotify()
 }
 
 
