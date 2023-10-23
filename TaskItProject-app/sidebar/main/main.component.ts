@@ -31,6 +31,7 @@ export class MainComponent  {
   inProg:any[];
   done:any[];
   noted:string
+  state:string
   notifyActivated=false
 
 
@@ -115,19 +116,34 @@ export class MainComponent  {
 
 
 
-  // editTask(e, task){
-  //   // this.notify.activatedEmitter.next(true)
-  //   // this.noted="editted"
-  //   alert (this.localStorageService.getData('savedData', this.tasks))
-  //   this.tasks.forEach((value) =>{
-  //     if(value==e)
+  editTask(task){
+    this.state="Edit"
+    this.taskForm.patchValue({
+      title: task.title,
+      due: task.due,
+      priority: task.priority,
+      status: task.status,
+      description: task.description
+    });
+    this.isHidden = false;
+    this.getOpacity = 100;
 
-  //     this.isHidden=false
-  //     this.getOpacity=100
-  //     // this.tasks.push(this.taskForm.value)
-  //     this.localStorageService.setData('savedData', this.tasks)
-  //   })
-  // }
+
+
+    // this.tasks.forEach((value,index) =>{
+    //   if(value==e)
+
+    //   this.tasks.splice(index,1)
+    //   this.localStorageService.setData('savedData', this.tasks);
+
+    // })
+
+
+
+
+
+  }
+
 
 
 
@@ -141,9 +157,15 @@ export class MainComponent  {
 
 
     addIn(){
+      this.state="Add"
       this.isHidden=false
       this.getOpacity=100
     }
+
+
+    // addIn2(){
+
+    // }
 
   exitTask(){
     this.isHidden=true;
