@@ -99,8 +99,8 @@ export class MainComponent  {
 
 
 
-    createData(){
-      // console.log(form)
+    createData(form:NgForm){
+      console.log(form)
       this.notify.activatedEmitter.next(true)
       this.noted="added"
       console.log(notify)

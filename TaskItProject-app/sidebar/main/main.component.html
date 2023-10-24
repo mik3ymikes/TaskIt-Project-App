@@ -86,17 +86,8 @@
         <td></td>
       </tr>
 
-
-
-
-
-
-
-
     </tbody>
   </table>
-
-
 
 
 
@@ -109,9 +100,64 @@
 
 
 
-    <form [formGroup]="taskForm">
 
-              <!-- <form action="taskForm"> -->
+
+
+
+
+
+    <form (ngSubmit)="createData(ref)" #ref="ngForm" [formGroup]="taskForm">
+
+
+
+        <h4 class="add-title">{{state}} a New Task</h4>
+        <div class="task-details">
+
+        <input class="title-task form-control"  name="title" formControlName="title"  type="text" placeholder="title">
+        <input class="date-task form-control" formControlName="due" type="date" name="due" id="" placeholder="Due Date">
+
+        <textarea class="description-task form-control" formControlName="description" name="description" id=""  rows="6" placeholder="Description"></textarea>
+
+        <select class="priority-task form-control" formControlName="priority" name="priority" id="priority" [(ngModel)]="defaultPriority">
+          <option value='Priority'>--Priority--</option>
+          <option value="High">High</option>
+          <option value="Medium">Medium</option>
+          <option value="Low">Low</option>
+        </select>
+
+        <select class="status-task form-control" formControlName="status" name="status" id="stauts" [(ngModel)]="defaultPriority2">
+
+          <option value="Status">--Status--</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Not Started">Not Started</option>
+
+      </select>
+      <button type="submit"  class="btn btn-success">Create</button>
+      <button type="button" (click)="reset()" class="btn btn-info">Cancel</button>
+
+    </div>
+
+  </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <form [formGroup]="taskForm"> !@#@!#@!#@ this is the safe code for my stuff
+
+
 
 
                 <h4 class="add-title">{{state}} a New Task</h4>
@@ -130,18 +176,25 @@
                 </select>
 
                 <select class="status-task form-control" formControlName="status" name="status" id="stauts" [(ngModel)]="defaultPriority2">
-                  <!-- [ngModel]="'--Priority--'" -->
+
                   <option value="Status">--Status--</option>
                 <option value="In Progress">In Progress</option>
                 <option value="Not Started">Not Started</option>
 
               </select>
-              <button (click)="createData()" class="btn btn-success">Create</button>
+              <button  (click)="createData()" class="btn btn-success">Create</button>
               <button (click)="reset()" class="btn btn-info">Cancel</button>
 
             </div>
 
-          </form>
+          </form> -->
+
+
+
+
+
+
+
 
 
 
