@@ -99,13 +99,13 @@ export class MainComponent  {
 
 
 
-    createData(form:NgForm){
-      console.log(form)
+    createData(){
+      console.log(this.taskForm)
       this.notify.activatedEmitter.next(true)
       this.noted="added"
       console.log(notify)
       this.tasks.push(this.taskForm.value)
-     
+
       this.localStorageService.setData('savedData', this.tasks);
       this.taskForm.reset()
       this.isHidden=true;
