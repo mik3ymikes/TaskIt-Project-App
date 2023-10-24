@@ -140,22 +140,12 @@
   </form>
 
 
+</div>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- <form [formGroup]="taskForm"> !@#@!#@!#@ this is the safe code for my stuff
+<!--
+     <form [formGroup]="taskForm"> #@!# this works for sure if need to go back
 
 
 
@@ -195,10 +185,6 @@
 
 
 
-
-
-
-        </div>
         <!-- trying to figure out delete box -->
         <div [hidden]="isHidden3" class="delete-task-box">
           <svg (click)="exitTask2()" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
@@ -206,7 +192,9 @@
           </svg>
 
 
-          <div class="delete-con">
+
+
+          <!-- <div class="delete-con"> /if problems look at this#@!!!!!!!!! thought it was delete are u sure butotn
 
 
             <h2 class="delete-title">Are you sure you want to delete this task? &nbsp;</h2>
@@ -214,9 +202,9 @@
 
 
           <button (click)="exitTask2()" class="del-btn btn btn-info">Cancel</button>
-          <!-- <button  (click)="removeTask(task)" class=" del-btn btn btn-danger">Delete</button> -->
+          <button>(click)="removeTask(task)" class=" del-btn btn btn-danger">Delete</button>
         </div>
-      </div>
+      </div> -->
 
     </div>
 

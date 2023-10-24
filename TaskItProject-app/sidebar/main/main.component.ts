@@ -105,8 +105,7 @@ export class MainComponent  {
       this.noted="added"
       console.log(notify)
       this.tasks.push(this.taskForm.value)
-      //below is las known to work if need to reset
-      // localStorage.setItem('savedData', JSON.stringify(this.tasks))
+     
       this.localStorageService.setData('savedData', this.tasks);
       this.taskForm.reset()
       this.isHidden=true;
