@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter, OnInit, OnDestroy, NgModule} from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
 import { localStorageService } from './local-storage.service';
 import { notify } from '../../src/notifcations/notification.service';
 import { Subscription, timeout } from 'rxjs';
@@ -100,6 +100,7 @@ export class MainComponent  {
 
 
     createData(){
+      // console.log(form)
       this.notify.activatedEmitter.next(true)
       this.noted="added"
       console.log(notify)
@@ -180,17 +181,20 @@ export class MainComponent  {
   exitTask(){
     this.isHidden=true;
     this.getOpacity=0;
+    this.reset()
   }
   exitTask2(){
     this.isHidden=true;
     this.isHidden3=true
+    this.reset()
   }
 
 
   reset(){
     this.taskForm.reset()
-  this.isHidden=true;
+   this.isHidden=true;
     this.getOpacity=0;
+    console.log("hi")
 }
 
 
