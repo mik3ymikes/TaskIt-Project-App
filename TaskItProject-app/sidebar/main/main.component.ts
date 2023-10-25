@@ -74,7 +74,7 @@ export class MainComponent  {
       due:['', Validators.required],
       priority:['', Validators.required],
       status:['', Validators.required],
-        description:['', Validators.required]
+        description:['']
 
 
       })
