@@ -227,11 +227,16 @@ body{
 
 
 
-.dangerBlock{
+/* .dangerBlock{
+  border: solid red;
   color: red;
   font-size: xx-small;
-}
+} */
 
+
+input.ng-invalid.ng-touched{
+  border: 1px solid red;
+}
 
 
 
