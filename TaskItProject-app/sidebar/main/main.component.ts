@@ -31,7 +31,8 @@ export class MainComponent  {
   inProg:any[];
   done:any[];
   noted:string;
-  state:string;
+  state:string='Add';
+
   // isActive:boolean;
   notifyActivated=false;
   isActive=false
@@ -100,54 +101,69 @@ export class MainComponent  {
 
 
     createData(){
-      console.log(this.taskForm)
-      this.notify.activatedEmitter.next(true)
-      this.noted="added"
-      console.log(notify)
-      this.tasks.push(this.taskForm.value)
+      // console.log(this.taskForm)
+      // this.notify.activatedEmitter.next(true)
+      // this.noted="added"
+      // console.log(notify)
+      // this.tasks.push(this.taskForm.value)
+
+      // this.localStorageService.setData('savedData', this.tasks);
+      // this.taskForm.reset()
+      // this.isHidden=true;
+      // this.getOpacity=0;
+      // this.endNotify()
+
+
+
+      if (this.state === 'Add') {
+        // Add a new task
+        this.notify.activatedEmitter.next(true);
+        this.noted = 'added';
+        this.tasks.push(this.taskForm.value);
+
+      } else if (this.state === 'Edit') {
+
+        // Push the updated value
+        this.notify.activatedEmitter.next(true);
+        this.noted = 'edited';
+        this.tasks.push(this.taskForm.value);
+      }
 
       this.localStorageService.setData('savedData', this.tasks);
-      this.taskForm.reset()
-      this.isHidden=true;
-      this.getOpacity=0;
-      this.endNotify()
-      this.isActive=false
+      this.taskForm.reset();
+      this.isHidden = true;
+      this.getOpacity = 0;
+      this.endNotify();
+      this.state="Add"
+      console.log(this.state)
 
-    //  if (this.isActive) {
-    //   this.tasks.forEach((value,index) =>{
-    //       if(value==task)
 
-    //       this.tasks.splice(index,1)
 
-    //     })
-    //  }
+
+
     }
 
 
 
 
+
+
+
   editTask(task){
-    this.state="Edit"
-    this.taskForm.patchValue({
-      title: task.title,
-      due: task.due,
-      priority: task.priority,
-      status: task.status,
-      description: task.description
-    });
+    this.state='Edit'
+    this.taskForm.controls['title'].setValue(task.title);
+    this.taskForm.controls['due'].setValue(task.due);
+    this.taskForm.controls['priority'].setValue(task.priority);
+    this.taskForm.controls['status'].setValue(task.status);
+    this.taskForm.controls['description'].setValue(task.description);
+
+    this.isHidden = false;
+    this.getOpacity = 100;
+    this.isActive = true;
     this.isHidden = false;
     this.getOpacity = 100;
      this.isActive=true
-
-
-    // this.tasks.forEach((value,index) =>{
-    //   if(value==e)
-
-    //   this.tasks.splice(index,1)
-    //   this.localStorageService.setData('savedData', this.tasks);
-
-    // })
-
+     console.log(this.state)
 
 
 
@@ -181,7 +197,9 @@ export class MainComponent  {
     this.isHidden=true;
     this.getOpacity=0;
     this.reset()
+    this.state="Add"
   }
+
   exitTask2(){
     this.isHidden=true;
     this.isHidden3=true
@@ -193,7 +211,7 @@ export class MainComponent  {
     this.taskForm.reset()
    this.isHidden=true;
     this.getOpacity=0;
-    console.log("hi")
+    this.state="Add"
 }
 
 
