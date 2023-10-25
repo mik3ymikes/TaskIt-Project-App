@@ -116,6 +116,7 @@ export class MainComponent  {
 
 
       if (this.state === 'Add') {
+        console.log(this.taskForm.value)
         // Add a new task
         this.notify.activatedEmitter.next(true);
         this.noted = 'added';
@@ -126,6 +127,7 @@ export class MainComponent  {
         // Push the updated value
         this.notify.activatedEmitter.next(true);
         this.noted = 'edited';
+        
         this.tasks.push(this.taskForm.value);
       }
 

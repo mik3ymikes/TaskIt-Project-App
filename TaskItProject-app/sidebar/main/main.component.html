@@ -111,14 +111,16 @@
 
 
         <h4 class="add-title">{{state}} a New Task</h4>
-        <span class="dangerBlock" *ngIf="!taskForm.get('title').valid && taskForm.get('title').touched" title.placeholder="enter"> *Required Fields </span>
+        <span class="dangerBlock" *ngIf="!taskForm.get('title').valid && taskForm.get('title').touched"> *Required Fields </span>
         <div class="task-details">
+        <input class="title-task form-control"   formControlName="title"  type="text" placeholder="title" >
 
-          <input class="title-task form-control"   formControlName="title"  type="text" placeholder="title" >
+        <span class="dangerBlock" *ngIf="!taskForm.get('due').valid && taskForm.get('due').touched" > *Required Fields </span>
         <input class="date-task form-control" formControlName="due" type="date" name="due" id="" placeholder="Due Date">
 
         <textarea class="description-task form-control" formControlName="description" id=""  rows="6" placeholder="Description"></textarea>
 
+        <span class="dangerBlock" *ngIf="!taskForm.get('priority').valid && taskForm.get('priority').touched" > *Required Fields </span>
         <select class="priority-task form-control" formControlName="priority"  id="priority" [(ngModel)]="defaultPriority">
           <option value='Priority'>--Priority--</option>
           <option value="High">High</option>
@@ -126,8 +128,8 @@
           <option value="Low">Low</option>
         </select>
 
-        <select class="status-task form-control" formControlName="status"  id="stauts" [(ngModel)]="defaultPriority2">
-
+        <span class="dangerBlock" *ngIf="!taskForm.get('status').valid && taskForm.get('status').touched" > *Required Fields </span>
+        <select class="status-task form-control" formControlName="status"  id="status" [(ngModel)]="defaultPriority2">
           <option value="Status">--Status--</option>
         <option value="In Progress">In Progress</option>
         <option value="Not Started">Not Started</option>
