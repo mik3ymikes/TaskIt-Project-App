@@ -12,6 +12,7 @@ import { DeleteTaskComponent } from './delete-task/delete-task.component';
 import { KanbanBoardComponent } from '../../sidebar/main/kanban-board/kanban-board.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { LandingComponent } from './landing/landing.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 
@@ -19,7 +20,8 @@ import { LandingComponent } from './landing/landing.component';
 const appRoutes:Routes=[
   {path:'', component: LandingComponent},
   {path:'main', component: MainComponent},
-  {path:'kanban', component: KanbanBoardComponent}
+  {path:'kanban', component: KanbanBoardComponent},
+   {path:'signup', component:SignupComponent}
 ]
 
 @NgModule({
@@ -31,6 +33,7 @@ const appRoutes:Routes=[
     DeleteTaskComponent,
     KanbanBoardComponent,
     LandingComponent,
+    SignupComponent,
 
 
 
