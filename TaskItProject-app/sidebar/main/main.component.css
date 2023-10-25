@@ -227,16 +227,19 @@ body{
 
 
 
-/* .dangerBlock{
-  border: solid red;
+.dangerBlock{
+  position: absolute;
   color: red;
   font-size: xx-small;
-} */
+  bottom: 5%;
+  right: 5%;
+}
 
 
 input.ng-invalid.ng-touched, select.ng-invalid.ng-touched{
   border: 1px solid red;
-  
+  font-size: xx-small;
+
 }
 
 

@@ -111,10 +111,10 @@
 
 
         <h4 class="add-title">{{state}} a New Task</h4>
+        <span class="dangerBlock" *ngIf="!taskForm.get('title').valid && taskForm.get('title').touched" title.placeholder="enter"> *Required Fields </span>
         <div class="task-details">
 
           <input class="title-task form-control"   formControlName="title"  type="text" placeholder="title" >
-          <span class="dangerBlock" *ngIf="!taskForm.get('title').valid && taskForm.get('title').touched" title.placeholder="enter"> </span>
         <input class="date-task form-control" formControlName="due" type="date" name="due" id="" placeholder="Due Date">
 
         <textarea class="description-task form-control" formControlName="description" id=""  rows="6" placeholder="Description"></textarea>
