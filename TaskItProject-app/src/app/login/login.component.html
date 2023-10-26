@@ -7,7 +7,7 @@
       <form #form="ngForm" (ngSubmit)="onSubmit()">
       <div>
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" ngModel required email />
+        <input class="form-control" type="email" id="email" name="email" ngModel required email />
         <div *ngIf="form.submitted && !form.form.controls.email.valid">
           <p *ngIf="form.form.controls.email.errors.required">Email is required.</p>
           <p *ngIf="form.form.controls.email.errors.email">
@@ -15,14 +15,15 @@
           </p>
         </div>
         <label for="password">Password</label>
-        <input type="password" id="password" name="password" ngModel required>
+        <input class="form-control" type="password" id="password" name="password" ngModel required>
       </div>
 
             <div class="footCon">
 
               <p class="acct"> Dont have an account?</p>
               <a class="log" routerLink="/signup"> Sign Up </a>
-              <a routerLink="/main"><button type="submit" class="btn btn-success">Submit</button></a>
+              <!-- <a routerLink="/main"><button type="submit" class="btn btn-success">Submit</button></a> -->
+              <button type="submit" class="btn btn-success">Submit</button>
             </div>
 
 
