@@ -65,21 +65,7 @@ button{
 
   width: 8rem;
 }
-/*
 
-
-.signCon{
-  width: 100%;
-
-  display: flex;
-
-  justify-content: center;
-
-  align-items: center;
-  gap: 1rem;
-  margin-top: 18px;
-
-} */
 
 
 .footCon{
@@ -91,13 +77,14 @@ button{
 
 
 .acct{
-  font-size: .90em;
+  font-size: .70em;
+  font-weight: 700;
 }
 
 
 .log{
   color: #008000;
-  font-size: .90em;
+  font-size: .70em;
   margin-left: 2%;
   margin-right: 4%
 }
