@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class SignupComponent {
 
+
+  onSubmit(){
+    alert("hi")
+  }
+
 }

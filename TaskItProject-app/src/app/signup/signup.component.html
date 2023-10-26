@@ -4,21 +4,36 @@
 
       <h3>Welcome to <span class="col">TASK</span>IT</h3>
       <p class="sUP">Sign up to get things done.</p>
-      <form>
-        <input type="text">
+      <form #form="ngForm" (ngSubmit)="onSubmit()">
+        <label for="firstName">First Name</label>
+        <input  type="text" id="firstName" name="firstName" ngModel required>
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="lastName" ngModel required>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" ngModel required email />
+          <div *ngIf="form.submitted && !form.form.controls.email.valid">
+            <p *ngIf="form.form.controls.email.errors.required">Email is required.</p>
+            <p *ngIf="form.form.controls.email.errors.email">
+              Email must be a valid email address.
+            </p>
+          </div>
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" ngModel required>
+        </div>
+
+              <div class="footCon">
+
+                <p class="acct"> Have an account?</p>
+                <a class="log" routerLink="/login"> Login </a>
+                <!-- <a routerLink="/main"><button class="btn btn-success" type="submit">Submit</button></a> -->
+                <a ><button class="btn btn-success" type="submit">Submit</button></a>
+              </div>
       </form>
 
 
 
 
-
-
-      <div class="footCon">
-
-        <p class="acct"> Have an account?</p>
-        <a class="log" routerLink="/login"> Login </a>
-        <a routerLink="/main"><button class="btn btn-success">Submit</button></a>
-      </div>
 
 
     </div>
