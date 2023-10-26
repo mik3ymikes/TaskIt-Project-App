@@ -12,7 +12,7 @@ export class SignupComponent {
   form:NgForm
 
   onSubmit(form: NgForm){
-
+    form.reset()
   }
 
 }
