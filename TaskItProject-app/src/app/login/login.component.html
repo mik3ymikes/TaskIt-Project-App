@@ -4,20 +4,32 @@
 
       <h3>Welcome Back!</h3>
       <p class="sUP">Lets get to work.</p>
-      <form>
-        <input type="text">
-      </form>
-
-
-      <div class="footCon">
-
-        <p class="acct"> Dont have an account?</p>
-        <a class="log" routerLink="/signup"> Sign Up </a>
-        <a routerLink="/main"><button class="btn btn-success">Submit</button></a>
+      <form #form="ngForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" ngModel required email />
+        <div *ngIf="form.submitted && !form.form.controls.email.valid">
+          <p *ngIf="form.form.controls.email.errors.required">Email is required.</p>
+          <p *ngIf="form.form.controls.email.errors.email">
+            Email must be a valid email address.
+          </p>
+        </div>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" ngModel required>
       </div>
 
+            <div class="footCon">
 
-    </div>
+              <p class="acct"> Dont have an account?</p>
+              <a class="log" routerLink="/signup"> Sign Up </a>
+              <a routerLink="/main"><button type="submit" class="btn btn-success">Submit</button></a>
+            </div>
+
+
+          </form>
+        </div>
+
+
   </div>
 
 </body>
