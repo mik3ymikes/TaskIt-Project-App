@@ -33,7 +33,7 @@
                 <p class="acct"> Have an account?</p>
                 <a class="log" routerLink="/login"> Login </a>
                 <!-- <a routerLink="/main"><button class="btn btn-success" type="submit">Submit</button></a> -->
-                <a ><button class="btn btn-success" type="submit">Submit</button></a>
+                <a ><button [disabled]="form.invalid" class="btn btn-success" type="submit">Submit</button></a>
               </div>
       </form>
 
