@@ -4,17 +4,20 @@
 
       <h3>Welcome to <span class="col">TASK</span>IT</h3>
       <p class="sUP">Sign up to get things done.</p>
+
+
       <form #form="ngForm" (ngSubmit)="onSubmit()">
         <label for="firstName">First Name</label>
         <input class="form-control"  type="text" id="firstName" name="firstName" ngModel required>
+        <span class="dangerBlock" *ngIf="!form.get('name').valid && form.get('name').touched"> *Required Fields </span>
         <label for="lastName">Last Name</label>
         <input class="form-control"  type="text" id="lastName" name="lastName" ngModel required>
         <div>
           <label for="email">Email</label>
           <input class="form-control" type="email" id="email" name="email" ngModel required email />
           <div *ngIf="form.submitted && !form.form.controls.email.valid">
-            <p *ngIf="form.form.controls.email.errors.required">Email is required.</p>
-            <p *ngIf="form.form.controls.email.errors.email">
+            <p class="dangerBlock"*ngIf="form.form.controls.email.errors.required">Email is required.</p>
+            <p class="dangerBlock" *ngIf="form.form.controls.email.errors.email">
               Email must be a valid email address.
             </p>
           </div>

@@ -9,7 +9,7 @@ export class SignupComponent {
 
 
   onSubmit(){
-    alert("hi")
+    
   }
 
 }
