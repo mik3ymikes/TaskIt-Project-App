@@ -1,0 +1,103 @@
+*{ padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+}
+
+
+body{
+ height: 100vh;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+
+  /* background-color: red; */
+}
+
+
+
+
+
+
+
+.mainCon{
+ display: flex;
+  height: 50%;
+  background-color: rgba(128, 128, 128, 0.089);
+  /* border: green solid; */
+  width: 40%;
+  justify-content: center;
+  align-items: center;
+
+  /* text-align: center;
+ margin: 0% auto; */
+
+
+}
+
+.centerCon{
+  /* background-color: red; */
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+}
+
+
+
+h3{
+  /* width: 100%; */
+  font-weight: 720;
+  margin-top: 8%;
+
+
+}
+
+.sUP{
+ margin-bottom: 7%;
+ font-weight: 620;
+}
+
+
+
+
+button{
+  /* padding: 2px; */
+
+  width: 8rem;
+}
+/*
+
+
+.signCon{
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+  gap: 1rem;
+  margin-top: 18px;
+
+} */
+
+
+.footCon{
+  display: flex;
+ justify-content: end;
+
+ align-items: center;
+}
+
+
+.acct{
+  font-size: .90em;
+}
+
+
+.log{
+  color: #008000;
+  font-size: .90em;
+  margin-left: 2%;
+  margin-right: 4%
+}

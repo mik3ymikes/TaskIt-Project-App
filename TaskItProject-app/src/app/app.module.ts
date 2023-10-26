@@ -13,6 +13,7 @@ import { KanbanBoardComponent } from '../../sidebar/main/kanban-board/kanban-boa
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { LandingComponent } from './landing/landing.component';
 import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -21,7 +22,8 @@ const appRoutes:Routes=[
   {path:'', component: LandingComponent},
   {path:'main', component: MainComponent},
   {path:'kanban', component: KanbanBoardComponent},
-   {path:'signup', component:SignupComponent}
+   {path:'signup', component:SignupComponent},
+   {path:'login', component:LoginComponent}
 ]
 
 @NgModule({
@@ -34,6 +36,7 @@ const appRoutes:Routes=[
     KanbanBoardComponent,
     LandingComponent,
     SignupComponent,
+    LoginComponent,
 
 
 
