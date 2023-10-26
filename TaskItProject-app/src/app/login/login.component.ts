@@ -12,6 +12,7 @@ export class LoginComponent {
 
   onSubmit(form: NgForm){
     form.reset()
+    console.log(form)
   }
 
 }
