@@ -6,13 +6,30 @@ import { NgForm } from '@angular/forms';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
+
+
+
+
+
+
+
 export class LoginComponent {
   form:NgForm
 
+  // LogDetials={
+  //   email:"",
+  //   password:""
+  // }
+
+
 
   onSubmit(form: NgForm){
-    form.reset()
+
+    // console.log(form)
+    console.log(form.value)
     console.log(form)
+    // form.reset()
   }
 
 }

@@ -11,7 +11,12 @@ import { NgForm } from '@angular/forms';
 export class SignupComponent {
   form:NgForm
 
+
   onSubmit(form: NgForm){
+    // form.reset()
+    // console.log(form)
+    console.log(form.value)
+    console.log(form)
     form.reset()
   }
 

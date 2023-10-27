@@ -8,7 +8,7 @@
 
       <form #form="ngForm" (ngSubmit)="onSubmit(form)" >
         <label for="firstName">First Name</label>
-        <input class="form-control"  type="text" id="firstName" name="firstName" ngModel required #firstName="ngModel">
+        <input class="form-control"  type="text" id="firstName" name="firstName" ngModel required  #firstName="ngModel">
         <p class="dangerBlock" *ngIf="!firstName.valid && firstName.touched"> *Required Field </p>
         <label for="lastName">Last Name</label>
         <input class="form-control"  type="text" id="lastName" name="lastName" ngModel required #lastName="ngModel">
@@ -16,15 +16,16 @@
         <div>
           <label for="email">Email</label>
           <input class="form-control" type="email" id="email" name="email" ngModel required email #email="ngModel" />
-          <p class="dangerBlock" *ngIf="!email.valid && email.touched"> *Required Field </p>
-          <div *ngIf="form.submitted && !form.form.controls.email.valid">
-            <p class="dangerBlock"*ngIf="form.form.controls.email.errors.required">Email is required.</p>
+          <!-- <div *ngIf="form.submitted && !form.form.controls.email.valid">
             <p class="dangerBlock" *ngIf="form.form.controls.email.errors.email">
               Email must be a valid email address.
             </p>
-          </div>
+          </div> -->
+          <p class="dangerBlock" *ngIf="form.form.controls.email.errors.email && email.touched"> Email must be valid </p>
+          <p class="dangerBlock" *ngIf="!email.valid && email.touched"> *Required Field </p>
           <label for="password">Password</label>
-          <input class="form-control" type="password" id="password" name="password" ngModel required #password="ngModel">
+          <input class="form-control" minlength="6" type="password" id="password" name="password" ngModel required #password="ngModel">
+          <p class="dangerBlock" *ngIf="password.errors?.minlength && password.touched"> Password is too short! </p>
           <p class="dangerBlock" *ngIf="!password.valid && password.touched"> *Required Field </p>
         </div>
 
