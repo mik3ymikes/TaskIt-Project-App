@@ -17,7 +17,7 @@
         </div> -->
         <label for="password">Password</label>
         <input class="form-control" type="password" id="password" name="password" ngModel minlength="6" required #password="ngModel">
-        <p class="dangerBlock" *ngIf="password.errors?.minlength && password.touched"> Password is too short! </p>
+        <!-- <p class="dangerBlock" *ngIf="password.errors?.minlength && password.touched"> Password is too short! </p> -->
         <span class="dangerBlock" *ngIf="!password.valid && password.touched"> *Required Field </span>
       </div>
 

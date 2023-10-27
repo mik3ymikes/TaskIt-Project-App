@@ -21,11 +21,11 @@
               Email must be a valid email address.
             </p>
           </div> -->
-          <p class="dangerBlock" *ngIf="form.form.controls.email.errors.email && email.touched"> Email must be valid </p>
+          <!-- <p class="dangerBlock" *ngIf="form.form.controls.email.errors.email && email.touched"> Email must be valid </p> -->
           <p class="dangerBlock" *ngIf="!email.valid && email.touched"> *Required Field </p>
           <label for="password">Password</label>
           <input class="form-control" minlength="6" type="password" id="password" name="password" ngModel required #password="ngModel">
-          <p class="dangerBlock" *ngIf="password.errors?.minlength && password.touched"> Password is too short! </p>
+          <!-- <p class="dangerBlock" *ngIf="password.errors?.minlength && password.touched"> Password is too short! </p> -->
           <p class="dangerBlock" *ngIf="!password.valid && password.touched"> *Required Field </p>
         </div>
 
