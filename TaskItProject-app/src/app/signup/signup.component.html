@@ -8,11 +8,13 @@
 
       <form #form="ngForm" (ngSubmit)="onSubmit(form)" >
         <label for="firstName">First Name</label>
-        <input class="form-control"  type="text" id="firstName" name="firstName" maxlength="20" ngModel required  #firstName="ngModel">
+        <input class="form-control"  type="text" id="firstName" name="firstName" maxlength="20" pattern="[a-zA-Z ]*" ngModel required  #firstName="ngModel">
         <p class="dangerBlock" *ngIf="!firstName.valid && firstName.touched"> *Required Field </p>
+        <p class="dangerBlock" *ngIf="firstName.errors?.pattern && firstName.dirty"> no special characters allowed </p>
         <label for="lastName">Last Name</label>
-        <input class="form-control"  type="text" id="lastName" name="lastName" ngModel maxlength="20" required #lastName="ngModel">
+        <input class="form-control"  type="text" id="lastName" name="lastName"   maxlength="20" pattern="[a-zA-Z ]*"  ngModel required #lastName="ngModel">
         <p class="dangerBlock" *ngIf="!lastName.valid && lastName.touched"> *Required Field </p>
+        <p class="dangerBlock" *ngIf="lastName.errors?.pattern && lastName.dirty"> no special characters allowed </p>
         <div>
           <label for="email">Email</label>
           <input class="form-control" type="email" id="email" name="email" ngModel maxlength="20" required email #email="ngModel" />

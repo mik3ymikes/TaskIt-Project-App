@@ -17,7 +17,7 @@ export class SignupComponent {
     // console.log(form)
     console.log(form.value)
     console.log(form)
-    form.reset()
+    // form.reset()
   }
 
 }
