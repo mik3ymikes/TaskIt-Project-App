@@ -26,8 +26,9 @@
           <!-- <p class="dangerBlock" *ngIf="form.form.controls.email.errors.email && email.touched"> Email must be valid </p> -->
           <p class="dangerBlock" *ngIf="!email.valid && email.touched"> *Required Field </p>
           <label for="password">Password</label>
-          <input class="form-control" minlength="6" maxlength="20" type="password" id="password" name="password" ngModel required #password="ngModel">
+          <input class="form-control" minlength="6" pattern="(?=.*[A-Z])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]+" maxlength="20" type="password" id="password" name="password" ngModel required #password="ngModel">
           <p class="dangerBlock" *ngIf="password.errors?.minlength && password.touched"> Password is too short! </p>
+          <p class="dangerBlock" *ngIf="password.errors?.pattern && password.dirty"> Must contain a special character and capital letter!  </p>
           <!-- <p class="dangerBlock" *ngIf="password.errors?.maxlength && password.touched"> Password is too long! </p> -->
           <p class="dangerBlock" *ngIf="!password.valid && password.touched"> *Required Field </p>
         </div>
