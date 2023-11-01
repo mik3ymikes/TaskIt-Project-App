@@ -13,11 +13,16 @@ export class SignupComponent {
 
 
   onSubmit(form: NgForm){
+
+
+
+
+    
     // form.reset()
+
+    // console.log(form.value)
     // console.log(form)
-    console.log(form.value)
-    console.log(form)
-    // form.reset()
+
   }
 
 }

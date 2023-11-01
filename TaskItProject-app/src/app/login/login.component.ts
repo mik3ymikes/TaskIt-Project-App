@@ -17,19 +17,33 @@ import { NgForm } from '@angular/forms';
 export class LoginComponent {
   form:NgForm
 
-  // LogDetials={
-  //   email:"",
-  //   password:""
-  // }
+  logDetails={
+    email: '',
+    password: ''
+  }
 
+
+  // may need this at somepoint
+  // logDetails=[{
+  //   email: '',
+  //   password: ''
+  // }]
 
 
   onSubmit(form: NgForm){
+    this.logDetails.email=form.value.email
+    this.logDetails.password=form.value.password
 
+
+    //may need this with top
+    // this.logDetails.push(form.value.email, form.value.password)
+
+
+    // console.log(form.value)
     // console.log(form)
-    console.log(form.value)
-    console.log(form)
-    // form.reset()
+
+   console.log(this.logDetails)
+    form.reset()
   }
 
 }
