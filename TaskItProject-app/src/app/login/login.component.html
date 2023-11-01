@@ -22,7 +22,7 @@
         <p class="dangerBlock" *ngIf="password.errors?.minlength && password.touched"> Password is too short! </p>
         <p class="dangerBlock" *ngIf="password.errors?.pattern && password.dirty"> Must contain a special character and capital letter! </p>
         <!-- <p class="dangerBlock" *ngIf="password.errors?.maxlength && password.touched"> Password is too long! </p> -->
-        <span class="dangerBlock" *ngIf="!password.valid && password.touched"> *Required Field </span>
+        <p class="dangerBlock" *ngIf="!password.valid && password.touched"> *Required Field </p>
       </div>
 
             <div class="footCon">
