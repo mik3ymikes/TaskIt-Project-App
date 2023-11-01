@@ -17,7 +17,7 @@
         <p class="dangerBlock" *ngIf="lastName.errors?.pattern && lastName.dirty"> no special characters allowed </p>
         <div>
           <label for="email">Email</label>
-          <input class="form-control" type="email" id="email" name="email" ngModel maxlength="20" required email #email="ngModel" />
+          <input class="form-control" type="email" id="email" name="email" ngModel maxlength="30" required email #email="ngModel" />
           <!-- <div *ngIf="form.submitted && !form.form.controls.email.valid">
             <p class="dangerBlock" *ngIf="form.form.controls.email.errors.email">
               Email must be a valid email address.
