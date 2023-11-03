@@ -1,10 +1,16 @@
-import { Component, Output, EventEmitter, OnInit, OnDestroy, NgModule} from '@angular/core';
+import { Component, Output, EventEmitter, OnInit, OnDestroy, NgModule, Injectable} from '@angular/core';
 import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
 import { localStorageService } from './local-storage.service';
 import { notify } from '../../src/notifcations/notification.service';
 import { Subscription, timeout } from 'rxjs';
 import { FormsModule } from '@angular/forms';
 
+
+
+
+// @Injectable({
+//   providedIn:'root'
+// })
 
 
 
@@ -19,6 +25,7 @@ import { FormsModule } from '@angular/forms';
 
 export class MainComponent  {
   private activatedSub:Subscription
+  // @Output() buttonClick:EventEmitter<any> =new EventEmitter()
 
   // notifyActivated=false
 
@@ -101,6 +108,7 @@ export class MainComponent  {
 
 
     createData(){
+
       // console.log(this.taskForm)
       // this.notify.activatedEmitter.next(true)
       // this.noted="added"
@@ -127,7 +135,7 @@ export class MainComponent  {
         // Push the updated value
         this.notify.activatedEmitter.next(true);
         this.noted = 'edited';
-        
+
         this.tasks.push(this.taskForm.value);
       }
 
@@ -185,6 +193,7 @@ export class MainComponent  {
 
 
     addIn(){
+      // this.buttonClick.emit()
       this.state="Add"
       this.isHidden=false
       this.getOpacity=100

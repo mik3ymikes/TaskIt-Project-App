@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+// import { MainComponent } from '../main.component';
 
 @Component({
   selector: 'app-im-bored',
@@ -6,13 +7,26 @@ import { Component } from '@angular/core';
   styleUrls: ['./im-bored.component.css']
 })
 export class ImBoredComponent {
-ranTask=''
+
+
+
+
+
+
+  isHidden=true
+  ranTask=''
 
 
 
 
   genTask(){
     console.log("hey")
+    this.isHidden=false
   }
+
+
+
+
+
 
 }
