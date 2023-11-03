@@ -14,6 +14,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { LandingComponent } from './landing/landing.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
+import { ImBoredComponent } from '../../sidebar/main/im-bored/im-bored.component';
 
 
 
@@ -23,7 +24,8 @@ const appRoutes:Routes=[
   {path:'main', component: MainComponent},
   {path:'kanban', component: KanbanBoardComponent},
    {path:'signup', component:SignupComponent},
-   {path:'login', component:LoginComponent}
+   {path:'login', component:LoginComponent},
+   {path: 'im-bored', component:ImBoredComponent}
 ]
 
 @NgModule({
@@ -37,6 +39,7 @@ const appRoutes:Routes=[
     LandingComponent,
     SignupComponent,
     LoginComponent,
+    ImBoredComponent,
 
 
 

@@ -19,7 +19,7 @@ import { CdkDragDrop,moveItemInArray,transferArrayItem, CdkDrag, CdkDropList} fr
     tasks:any[]
     inProg:any[]
     done:any[]
-    allTasks
+    // allTasks
 
 
     constructor(private localStorageService:localStorageService){
