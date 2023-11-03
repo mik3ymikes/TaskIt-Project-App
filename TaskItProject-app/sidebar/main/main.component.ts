@@ -4,13 +4,14 @@ import { localStorageService } from './local-storage.service';
 import { notify } from '../../src/notifcations/notification.service';
 import { Subscription, timeout } from 'rxjs';
 import { FormsModule } from '@angular/forms';
+import { Subject } from 'rxjs';
 
 
 
 
-// @Injectable({
-//   providedIn:'root'
-// })
+@Injectable({
+  providedIn:'root'
+})
 
 
 
@@ -25,6 +26,12 @@ import { FormsModule } from '@angular/forms';
 
 export class MainComponent  {
   private activatedSub:Subscription
+
+
+  // private buttonSource=new Subject <boolean>()
+
+
+
   // @Output() buttonClick:EventEmitter<any> =new EventEmitter()
 
   // notifyActivated=false
