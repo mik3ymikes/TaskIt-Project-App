@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./im-bored.component.css']
 })
 export class ImBoredComponent {
+ranTask=''
+
+
+
+
+  genTask(){
+    console.log("hey")
+  }
 
 }
