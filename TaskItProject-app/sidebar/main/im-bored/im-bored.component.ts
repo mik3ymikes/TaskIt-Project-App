@@ -22,13 +22,14 @@ constructor(private imBoredGen: imBoredGen) {}
 ngOnInit(): void {
   this.imBoredGen.genTask().subscribe(
        (data) => {
-         this. ranTasks=data
-       }, (error) => {
-         console.error("there was an error", error)
-       }
-     )
+         this.ranTasks=data.activity
 
-}
+        }, (error) => {
+          console.error("there was an error", error)
+        }
+        )
+
+      }
 
 ranTask=''
 
@@ -40,9 +41,17 @@ ranTask=''
 
   genTaskBox (){
 
-    console.log("hey")
+    // let [{activity}]=this.ranTasks
+    // console.log(activity)
+
     this.isHidden=false
+
+
+    // let [{activity}]=this.ranTasks
+    // this.ranTask=activity
     // this.ranTask=this.ranTasks
+
+
 
     console.log(this.ranTasks)
 
