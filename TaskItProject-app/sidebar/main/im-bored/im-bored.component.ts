@@ -12,6 +12,7 @@ import { imBoredGen } from './imBoredGen.service';
 
 export class ImBoredComponent implements OnInit {
   ranTasks: any[]=[]
+  // ranTask:any[]=[]
 
 
 constructor(private imBoredGen: imBoredGen) {}
@@ -29,16 +30,20 @@ ngOnInit(): void {
 
 }
 
+ranTask=''
 
   isHidden=true
-  ranTask=''
 
 
 
 
-  genTaskBox(){
+
+  genTaskBox (){
+
     console.log("hey")
     this.isHidden=false
+    // this.ranTask=this.ranTasks
+
     console.log(this.ranTasks)
 
 
