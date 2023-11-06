@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { imBoredGen } from './imBoredGen.service';
 // import { MainComponent } from '../main.component';
 
@@ -7,11 +7,27 @@ import { imBoredGen } from './imBoredGen.service';
   templateUrl: './im-bored.component.html',
   styleUrls: ['./im-bored.component.css']
 })
-export class ImBoredComponent {
+
+
+
+export class ImBoredComponent implements OnInit {
+  ranTasks: any[]=[]
+
 
 constructor(private imBoredGen: imBoredGen) {}
-ranTasks: any[]=[]
 
+
+
+ngOnInit(): void {
+  this.imBoredGen.genTask().subscribe(
+       (data) => {
+         this. ranTasks=data
+       }, (error) => {
+         console.error("there was an error", error)
+       }
+     )
+
+}
 
 
   isHidden=true
@@ -23,14 +39,9 @@ ranTasks: any[]=[]
   genTaskBox(){
     console.log("hey")
     this.isHidden=false
+    console.log(this.ranTasks)
 
- this.imBoredGen.genTask().subscribe(
-      (data) => {
-        this. ranTasks=data
-      }, (error) => {
-        console.error("there was an error", error)
-      }
-    )
+
 
   }
 
