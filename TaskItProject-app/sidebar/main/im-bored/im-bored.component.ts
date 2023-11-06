@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { imBoredGen } from './imBoredGen.service';
 // import { MainComponent } from '../main.component';
 
 @Component({
@@ -8,8 +9,8 @@ import { Component } from '@angular/core';
 })
 export class ImBoredComponent {
 
-
-
+constructor(private imBoredGen: imBoredGen) {}
+ranTasks: any[]=[]
 
 
 
@@ -19,9 +20,18 @@ export class ImBoredComponent {
 
 
 
-  genTask(){
+  genTaskBox(){
     console.log("hey")
     this.isHidden=false
+
+ this.imBoredGen.genTask().subscribe(
+      (data) => {
+        this. ranTasks=data
+      }, (error) => {
+        console.error("there was an error", error)
+      }
+    )
+
   }
 
 
