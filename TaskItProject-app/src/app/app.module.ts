@@ -17,6 +17,7 @@ import { LandingComponent } from './landing/landing.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { ImBoredComponent } from '../../sidebar/main/im-bored/im-bored.component';
+// import { AuthComponent } from './shared/auth.component';
 
 
 
@@ -42,6 +43,7 @@ const appRoutes:Routes=[
     SignupComponent,
     LoginComponent,
     ImBoredComponent,
+    // AuthComponent
 
 
 
