@@ -19,11 +19,13 @@ constructor(private http: HttpClient) {}
 
 
 
-  signup(email: string, password: string){
-   return this.http.post <AuthResponseData>(
-   'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBttUuzoYltRcuAzQsk9yJCW_FqesyKCM8'
-   
+  signup( firstName:string, lastName: string, email: string, password: string){
+   return this.http.post<AuthResponseData>(
+   'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBttUuzoYltRcuAzQsk9yJCW_FqesyKCM8',
    {
+
+    firstName:String,
+    lastName:String,
     email:email,
     password:password,
     returnSecureToken: true

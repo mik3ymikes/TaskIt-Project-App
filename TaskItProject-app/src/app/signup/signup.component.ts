@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { AuthService } from '../shared/auth.service';
+import { last } from 'rxjs';
 
 @Component({
   selector: 'app-signup',
@@ -8,27 +10,53 @@ import { NgForm } from '@angular/forms';
 })
 
 
+
 export class SignupComponent {
   form:NgForm
 
-  signupDetails={
-    firstName:'',
-    lastName:'',
-    email: '',
-    password: ''
-  }
+
+  constructor(private authService: AuthService) {}
+
+  // signupDetails={
+  //   firstName:'',
+  //   lastName:'',
+  //   email: '',
+  //   password: ''
+  // }
 
 
 
   onSubmit(form: NgForm){
 
-   this.signupDetails.firstName=form.value.firstName
-   this.signupDetails.lastName=form.value.lastName
-   this.signupDetails.email=form.value.email
-   this.signupDetails.password=form.value.password
+
+    if(!form.valid){
+      return
+    }
 
 
-   console.log(this.signupDetails)
+  //  this.signupDetails.firstName=form.value.firstName
+  //  this.signupDetails.lastName=form.value.lastName
+  //  this.signupDetails.email=form.value.email
+  //  this.signupDetails.password=form.value.password
+
+
+  const firstName=form.value.firstName
+  const lastName=form.value.LastName
+  const email=form.value.email
+  const password= form.value.password
+
+
+
+   this.authService.signup(firstName, lastName, email, password).subscribe(
+    resData => {
+    console.log(resData);
+   },
+   error =>{
+    console.log(error)
+   }
+   )
+
+  //  console.log(this.signupDetails)
     form.reset()
 
 
