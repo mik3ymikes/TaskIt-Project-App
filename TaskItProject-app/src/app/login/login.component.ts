@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../shared/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,7 @@ import { AuthService } from '../shared/auth.service';
 export class LoginComponent {
   form:NgForm
   error:string =null
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   // logDetails={
   //   email: '',
@@ -48,6 +49,7 @@ export class LoginComponent {
 
   this.authService.login(email, password).subscribe(
     resData => {
+      this.router.navigate(['/main'])
       console.log(resData);
      },
      error =>{
