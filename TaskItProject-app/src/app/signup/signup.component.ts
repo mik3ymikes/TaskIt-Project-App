@@ -13,6 +13,7 @@ import { last } from 'rxjs';
 
 export class SignupComponent {
   form:NgForm
+  error:string =null
 
 
   constructor(private authService: AuthService) {}
@@ -53,6 +54,7 @@ export class SignupComponent {
    },
    error =>{
     console.log(error)
+    this.error='an error occured'
    }
    )
 

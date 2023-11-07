@@ -5,7 +5,9 @@
       <h3>Welcome to <span class="col">TASK</span>IT</h3>
       <p class="sUP">Sign up to get things done.</p>
 
-
+      <div class="alert alert-danger" *ngIf="error">
+        <p>{{error}}</p>
+      </div>
       <form #form="ngForm" (ngSubmit)="onSubmit(form)" >
         <label for="firstName">First Name</label>
         <input class="form-control"  type="text" id="firstName" name="firstName" maxlength="20" pattern="[a-zA-Z ]*" ngModel required  #firstName="ngModel">
