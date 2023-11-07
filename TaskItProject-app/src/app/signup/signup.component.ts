@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../shared/auth.service';
 import { last } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -16,7 +17,7 @@ export class SignupComponent {
   error:string =null
 
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   // signupDetails={
   //   firstName:'',
@@ -50,6 +51,7 @@ export class SignupComponent {
 
    this.authService.signup(firstName, lastName, email, password).subscribe(
     resData => {
+      this.router.navigate(['/login'])
     console.log(resData);
    },
    error =>{
