@@ -8,6 +8,7 @@ interface AuthResponseData{
   refreshToken:string;
   expiresIn:string;
   localId: string
+  registered?: boolean
 
 }
 
@@ -34,6 +35,18 @@ constructor(private http: HttpClient) {}
    )
 
 
+  }
+
+  login(email:string, password:string){
+    return this.http.post<AuthResponseData>('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBttUuzoYltRcuAzQsk9yJCW_FqesyKCM8',
+    {
+
+      email:email,
+      password:password,
+      returnSecureToken: true
+
+     }
+     )
   }
 }
 

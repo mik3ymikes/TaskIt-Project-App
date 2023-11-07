@@ -17,12 +17,13 @@ import { AuthService } from '../shared/auth.service';
 
 export class LoginComponent {
   form:NgForm
+  error:string =null
   constructor(private authService: AuthService) {}
 
-  logDetails={
-    email: '',
-    password: ''
-  }
+  // logDetails={
+  //   email: '',
+  //   password: ''
+  // }
 
 
   // may need this at somepoint
@@ -38,8 +39,23 @@ export class LoginComponent {
       return
     }
 
-    this.logDetails.email=form.value.email
-    this.logDetails.password=form.value.password
+    // this.logDetails.email=form.value.email
+    // this.logDetails.password=form.value.password
+
+
+  const email=form.value.email
+  const password= form.value.password
+
+  this.authService.login(email, password).subscribe(
+    resData => {
+      console.log(resData);
+     },
+     error =>{
+      console.log(error)
+      this.error='an error occured'
+     }
+     )
+
 
 
     //may need this with top
@@ -49,7 +65,7 @@ export class LoginComponent {
     // console.log(form.value)
     // console.log(form)
 
-   console.log(this.logDetails)
+  //  console.log(this.logDetails)
     form.reset()
   }
 

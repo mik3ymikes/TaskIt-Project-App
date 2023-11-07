@@ -4,6 +4,9 @@
 
       <h3>Welcome Back!</h3>
       <p class="sUP">Lets get to work.</p>
+      <div class="alert alert-danger" *ngIf="error">
+        <p>{{error}}</p>
+      </div>
       <form #form="ngForm" (ngSubmit)="onSubmit(form)" >
       <div>
         <label for="email">Email</label>
