@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router'
-import { Observable, map } from 'rxjs';
+import { Observable, map, take } from 'rxjs';
 import { AuthService } from './auth.service';
 
 
@@ -11,15 +11,16 @@ import { AuthService } from './auth.service';
 export class AuthGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router){}
 
-canActivate(): boolean {
-  if (this.authService.isAuthenticated()){
-      return true
-  } else{
-    this.router.navigate([''])
-    return false
-  }
 
-}
+// canActivate(): boolean {
+//   if (this.authService.isAuthenticated()){
+//       return true
+//   } else{
+//     this.router.navigate([''])
+//     return false
+//   }
+
+// }
 
 
 // canActivate(): boolean {
@@ -42,25 +43,25 @@ canActivate(): boolean {
 
 
 
-  // canActivate(
-  //   route:ActivatedRouteSnapshot,
-  //   router: RouterStateSnapshot
-  //   ):
-  //   | boolean
-  //   |UrlTree
-  //   |Promise <boolean | UrlTree>
-  //   | Observable <boolean |UrlTree> {
-  //      return this.authService.user.pipe(
-  //       take(1),
-  //       map(user =>{
-  //       const isAuth=!!user
-  //       if(isAuth) {
-  //         return true
-  //       }
-  //       return this.router.createUrlTree(['/auth'])
-  //      }))
+  canActivate(
+    route:ActivatedRouteSnapshot,
+    router: RouterStateSnapshot
+    ):
+    | boolean
+    |UrlTree
+    |Promise <boolean | UrlTree>
+    | Observable <boolean |UrlTree> {
+       return this.authService.user.pipe(
+        take(1),
+        map(user =>{
+        const isAuth=!!user
+        if(isAuth) {
+          return true
+        }
+        return this.router.createUrlTree(['/auth'])
+       }))
 
-  //   }
+    }
 
 
 

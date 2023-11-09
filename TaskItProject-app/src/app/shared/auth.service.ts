@@ -1,8 +1,10 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
-import {catchError} from 'rxjs/operators'
-import {throwError} from 'rxjs'
+import {catchError, tap} from 'rxjs/operators'
+import {Observable, Subject, throwError} from 'rxjs'
 import { Router } from "@angular/router";
+import { User } from "./user.model";
+
 
 interface AuthResponseData{
   kind:string;
@@ -19,37 +21,65 @@ interface AuthResponseData{
 
 @Injectable({ providedIn: 'root'})
 export class AuthService{
-constructor(private http: HttpClient) {}
+  user=new Subject <User>()
+  constructor(private http: HttpClient) { }
+
+
+
+  private isLoggedIn:boolean=false
+
+
+        isAuthenticated():boolean{
+          return this.isLoggedIn
+      }
+
+
 
 
 
   signup( firstName:string, lastName: string, email: string, password: string){
-   return this.http.post<AuthResponseData>(
-   'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBttUuzoYltRcuAzQsk9yJCW_FqesyKCM8',
-   {
+    return this.http.post<AuthResponseData>(
+      'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBttUuzoYltRcuAzQsk9yJCW_FqesyKCM8',
+      {
 
-    firstName:String,
-    lastName:String,
-    email:email,
-    password:password,
-    returnSecureToken: true
+        firstName:String,
+        lastName:String,
+        email:email,
+        password:password,
+        returnSecureToken: true
 
-   }
-   ).pipe(catchError(this.handleError))
+      },
 
 
-  }
 
-  login(email:string, password:string){
-    return this.http.post<AuthResponseData>('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBttUuzoYltRcuAzQsk9yJCW_FqesyKCM8',
-    {
+
+      ).pipe(catchError(this.handleError), tap(resData=>{
+        this.handleAuthentication(resData.email, resData.localId, resData.idToken)
+      }))
+
+
+    }
+
+    login(email:string, password:string ){
+      return this.http.post<AuthResponseData>('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBttUuzoYltRcuAzQsk9yJCW_FqesyKCM8',
+      {
 
       email:email,
       password:password,
-      returnSecureToken: true
+      returnSecureToken: true,
 
-     }
-     ).pipe(catchError(this.handleError))
+
+
+    }
+    ).pipe(catchError(this.handleError), tap(resData=>{
+      this.handleAuthentication(resData.email, resData.localId, resData.idToken)
+    }))
+
+  }
+
+  private handleAuthentication(email:string, userId:string, token:string){
+    const user =new User(email, userId, token)
+    this.user.next(user)
   }
 
 
@@ -69,14 +99,14 @@ constructor(private http: HttpClient) {}
         case 'inavalid_passowrd':
           errorMessage='this password is not correct'
           break;
-    }
-    return throwError(errorMessage)
+        }
+        return throwError(errorMessage)
+
+      }
+
+
 
   }
-
-
-
-}
 
 
 
