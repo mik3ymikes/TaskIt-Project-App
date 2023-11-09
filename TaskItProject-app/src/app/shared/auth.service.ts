@@ -26,12 +26,12 @@ export class AuthService{
 
 
 
-  private isLoggedIn:boolean=false
+  // private isLoggedIn:boolean=false
 
 
-        isAuthenticated():boolean{
-          return this.isLoggedIn
-      }
+  //       isAuthenticated():boolean{
+  //         return this.isLoggedIn
+  //     }
 
 
 
@@ -71,15 +71,27 @@ export class AuthService{
 
 
     }
-    ).pipe(catchError(this.handleError), tap(resData=>{
-      this.handleAuthentication(resData.email, resData.localId, resData.idToken)
-    }))
+    ).pipe(
+      catchError(this.handleError),
+      tap(resData=>{
+      this.handleAuthentication(
+        resData.email,
+        resData.localId,
+        resData.idToken
+        )
+    })
+    )
 
   }
 
-  private handleAuthentication(email:string, userId:string, token:string){
+  private handleAuthentication(
+    email:string,
+    userId:string,
+    token:string
+    ){
     const user =new User(email, userId, token)
     this.user.next(user)
+
   }
 
 

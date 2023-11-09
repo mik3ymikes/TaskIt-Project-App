@@ -17,6 +17,7 @@ import { LandingComponent } from './landing/landing.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { ImBoredComponent } from '../../sidebar/main/im-bored/im-bored.component';
+import { AuthGuard } from './shared/auth.guard';
 // import { AuthComponent } from './shared/auth.component';
 
 
@@ -24,11 +25,11 @@ import { ImBoredComponent } from '../../sidebar/main/im-bored/im-bored.component
 
 const appRoutes:Routes=[
   {path:'', component: LandingComponent},
-  {path:'main', component: MainComponent},
-  {path:'kanban', component: KanbanBoardComponent},
+  {path:'main', component: MainComponent, canActivate:[AuthGuard]},
+  {path:'kanban', component: KanbanBoardComponent, canActivate:[AuthGuard]},
    {path:'signup', component:SignupComponent},
    {path:'login', component:LoginComponent},
-   {path: 'im-bored', component:ImBoredComponent}
+   {path: 'im-bored', component:ImBoredComponent, canActivate:[AuthGuard]}
 ]
 
 @NgModule({

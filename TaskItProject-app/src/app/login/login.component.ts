@@ -46,13 +46,13 @@ export class LoginComponent {
 
   const email=form.value.email
   const password= form.value.password
-  let isSuccessful=false
+  // let isSuccessful=false
 
   this.authService.login(email, password).subscribe(
     resData => {
       this.router.navigate(['/main'])
       console.log(resData);
-      isSuccessful=true
+      // isSuccessful=true
      },
      error =>{
       console.log(error)
