@@ -90,7 +90,9 @@ export class AuthService{
     token:string
     ){
     const user =new User(email, userId, token)
+
     this.user.next(user)
+    localStorage.setItem("userData", JSON.stringify(user))
 
   }
 

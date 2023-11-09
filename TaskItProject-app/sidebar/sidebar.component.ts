@@ -1,6 +1,8 @@
-import { Component} from '@angular/core';
+import { Component, OnDestroy, OnInit} from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { User } from './sidebar.model'
+import { AuthService } from 'src/app/shared/auth.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,7 +11,22 @@ import { User } from './sidebar.model'
 })
 
 
-export class SidebarComponent {
+export class SidebarComponent implements OnInit, OnDestroy {
+  isAuthenticated=false
+  private userSub:Subscription
+  constructor(private authService: AuthService) {}
+
+
+  ngOnInit(): void {
+     this.userSub= this.authService.user.subscribe(user =>{
+      this.isAuthenticated= !!user
+     })
+  }
+
+  ngOnDestroy(): void {
+      this.userSub.unsubscribe()
+  }
+
  isHidden=true;
   // isHidden2=true;
   isHidden3=true;
