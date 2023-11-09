@@ -6,7 +6,7 @@ export class User {
     // private _tokenExpirationDate:Date
     ) {}
 
-
+    // return this._token
   }
 
 
