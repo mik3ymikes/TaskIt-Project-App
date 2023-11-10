@@ -27,7 +27,7 @@ const appRoutes:Routes=[
   {path:'', component: LandingComponent},
   {path:'main', component: MainComponent, canActivate:[AuthGuard]},
   {path:'kanban', component: KanbanBoardComponent, canActivate:[AuthGuard]},
-   {path:'signup', component:SignupComponent},
+   {path:'signup', component: SignupComponent},
    {path:'login', component:LoginComponent},
    {path: 'im-bored', component:ImBoredComponent, canActivate:[AuthGuard]}
 ]
