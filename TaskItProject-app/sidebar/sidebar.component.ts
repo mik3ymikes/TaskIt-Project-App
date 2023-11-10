@@ -1,8 +1,9 @@
 import { Component, OnDestroy, OnInit} from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { User } from './sidebar.model'
+// import { User } from './sidebar.model'
 import { AuthService } from 'src/app/shared/auth.service';
 import { Subscription } from 'rxjs';
+import { User } from 'src/app/shared/user.model';
 
 @Component({
   selector: 'app-sidebar',
@@ -49,43 +50,10 @@ export class SidebarComponent implements OnInit, OnDestroy {
   }
 
 
-  // toTask(){
-  // location.href="/"
-
-  // }
-
-  // toKanban(){
-  //   // location.href="/kanban"
-  //   // routerLink="/kanban"
-
-  //   }
 
 
 
-//   tasks:any
 
-
-// taskForm:FormGroup
-
-// constructor(public fb:FormBuilder){
-//   this.tasks=[]
-
-//   this.taskForm=this.fb.group({
-//     title:[""],
-//     due:[""],
-//     priority:[""],
-//     status:[""]
-
-
-//   })
-// }
-
-
-
-//   createData(){
-//   this.tasks.push(this.taskForm.value)
-//   // this.taskForm.reset()
-//   }
 
 
 }
