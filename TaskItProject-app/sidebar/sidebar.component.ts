@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { User } from './sidebar.model'
 import { AuthService } from 'src/app/shared/auth.service';
 import { Subscription } from 'rxjs';
+
 // import { User } from 'src/app/shared/user.model';
 
 @Component({
@@ -15,6 +16,8 @@ import { Subscription } from 'rxjs';
 export class SidebarComponent implements OnInit, OnDestroy {
   isAuthenticated=false
   private userSub:Subscription
+
+
   constructor(private authService: AuthService) {}
 
 
@@ -50,7 +53,10 @@ export class SidebarComponent implements OnInit, OnDestroy {
   }
 
 
-
+  onLogout(){
+  console.log("hey")
+ this.authService.logout()
+}
 
 
 
