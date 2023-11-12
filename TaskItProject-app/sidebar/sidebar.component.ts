@@ -56,6 +56,7 @@ export class SidebarComponent implements OnInit, OnDestroy {
   onLogout(){
   console.log("hey")
  this.authService.logout()
+
 }
 
 
