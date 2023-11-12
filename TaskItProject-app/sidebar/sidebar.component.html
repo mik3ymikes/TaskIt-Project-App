@@ -10,7 +10,9 @@
         <a routerLink="/kanban"><button class="btn btn-success task-list-btn">KanBan</button> </a>
         <a routerLink="/im-bored"><button class="btn btn-success task-list-btn">I'm Bored</button> </a>
       </div>
-        <div *ngFor="let user of users" class="info-con">
+        <!-- <div *ngFor="let user of users" class="info-con"> -->
+          <!-- <div *ngFor="let user of users" class="info-con"></div> -->
+          <div  class="info-con">
           <img class="photo1" src="https://images.unsplash.com/photo-1524117074681-31bd4de22ad3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80"
             height=30px width=30px alt="">
             <!-- <img class="photo1" src="{{user.imagePath}}"
@@ -18,9 +20,12 @@
             <div name-email-con>
 
 
+              <p class="email">{{user.email}}</p>
+
+<!--
               <p  class="name">{{user.name}}</p>
 
-              <p class="email">{{user.email}}</p>
+              <p class="email">{{user.email}}</p> -->
 
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" (click)="onLogout()"   width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
