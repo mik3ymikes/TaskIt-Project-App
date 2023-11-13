@@ -45,6 +45,7 @@ ranTask=''
 taskTable(){
   alert("Please manually add this task if you wish to do so! Having tech issues")
 
+
   // this.main.tasks=[...this.main.tasks, ...this.ranTasks]
 
 console.log(this.main.tasks)
