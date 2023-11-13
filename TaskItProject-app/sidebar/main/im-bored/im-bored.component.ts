@@ -13,6 +13,7 @@ import { MainComponent } from '../main.component';
 
 export class ImBoredComponent implements OnInit {
   ranTasks: any[]=[]
+  blah:any[]=[]
   // ranTask:any[]=[]
 
 
@@ -23,6 +24,7 @@ constructor(private imBoredGen: imBoredGen, private main: MainComponent) {}
 ngOnInit(): void {
   this.imBoredGen.genTask().subscribe(
        (data) => {
+      //  this.ranTasks.push(data.activity)
          this.ranTasks=data.activity
 
         }, (error) => {
@@ -36,12 +38,24 @@ ranTask=''
 
   isHidden=true
 
-
+// this.state='Add'
 
 
 
 taskTable(){
- 
+  alert("Please manually add this task if you wish to do so! Having tech issues")
+
+  // this.main.tasks=[...this.main.tasks, ...this.ranTasks]
+
+console.log(this.main.tasks)
+
+
+
+
+// this.main.createData()
+
+
+
 }
 
 
@@ -50,6 +64,8 @@ taskTable(){
     // let [{activity}]=this.ranTasks
     // console.log(activity)
 
+
+    // this.blah.push[this.ranTasks]
     this.isHidden=false
 
 
@@ -60,6 +76,7 @@ taskTable(){
 
 
     console.log(this.ranTasks)
+    console.log(this.main.tasks)
 
 
 

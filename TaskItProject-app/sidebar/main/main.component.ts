@@ -200,7 +200,7 @@ export class MainComponent  {
 
 
     addIn(){
-     
+
       this.state="Add"
       this.isHidden=false
       this.getOpacity=100
