@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { imBoredGen } from './imBoredGen.service';
+import { MainComponent } from '../main.component';
 // import { MainComponent } from '../main.component';
 
 @Component({
@@ -15,7 +16,7 @@ export class ImBoredComponent implements OnInit {
   // ranTask:any[]=[]
 
 
-constructor(private imBoredGen: imBoredGen) {}
+constructor(private imBoredGen: imBoredGen, private main: MainComponent) {}
 
 
 
@@ -37,6 +38,11 @@ ranTask=''
 
 
 
+
+
+taskTable(){
+ 
+}
 
 
   genTaskBox (){
