@@ -2,7 +2,7 @@
   "name": "task-it-project-app",
   "version": "0.0.0",
   "type": "module",
-    "scripts": {
+  "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
