@@ -44,7 +44,7 @@ ranTask=''
 
 taskTable(){
   alert("Please manually add this task if you wish to do so! Having tech issues")
-  console.log("did https work? ")
+
 
 
   // this.main.tasks=[...this.main.tasks, ...this.ranTasks]
@@ -69,7 +69,7 @@ console.log(this.main.tasks)
 
     // this.blah.push[this.ranTasks]
     this.isHidden=false
-
+    console.log("did https work? ")
 
     // let [{activity}]=this.ranTasks
     // this.ranTask=activity
