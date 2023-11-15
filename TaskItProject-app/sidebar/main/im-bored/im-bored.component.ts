@@ -43,6 +43,7 @@ ranTask=''
 
 
 taskTable(){
+  alert("blah")
   alert("Please manually add this task if you wish to do so! Having tech issues")
 
 
