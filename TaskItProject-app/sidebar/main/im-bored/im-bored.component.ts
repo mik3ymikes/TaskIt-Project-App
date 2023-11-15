@@ -62,14 +62,14 @@ console.log(this.main.tasks)
 
 
   genTaskBox (){
-
+    console.log("did https work? ")
     // let [{activity}]=this.ranTasks
     // console.log(activity)
 
 
     // this.blah.push[this.ranTasks]
     this.isHidden=false
-    console.log("did https work? ")
+
 
     // let [{activity}]=this.ranTasks
     // this.ranTask=activity
