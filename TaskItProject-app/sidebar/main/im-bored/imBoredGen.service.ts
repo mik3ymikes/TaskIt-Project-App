@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class imBoredGen {
-  private apiUrl = 'http://www.boredapi.com/api/activity/';
+  private apiUrl = 'https://www.boredapi.com/api/activity/';
 
   constructor(private http: HttpClient) { }
 
