@@ -6,9 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class imBoredGen {
-  private apiUrl = 'http://www.boredapi.com/api/activity/';
+  public apiUrl = 'http://www.boredapi.com/api/activity/';
 
-  constructor(private http: HttpClient) { }
+  constructor(public http: HttpClient) { }
 
   genTask(): Observable<any> {
     return this.http.get(this.apiUrl);
