@@ -152,7 +152,7 @@ export class MainComponent  {
       this.getOpacity = 0;
       this.endNotify();
       this.state="Add"
-      console.log(this.state)
+
 
 
 
@@ -180,7 +180,7 @@ export class MainComponent  {
     this.isHidden = false;
     this.getOpacity = 100;
      this.isActive=true
-     console.log(this.state)
+    
 
 
 

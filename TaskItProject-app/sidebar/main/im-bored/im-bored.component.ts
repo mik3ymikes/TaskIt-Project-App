@@ -49,7 +49,7 @@ taskTable(){
 
   // this.main.tasks=[...this.main.tasks, ...this.ranTasks]
 
-console.log(this.main.tasks)
+// console.log(this.main.tasks)
 
 
 
@@ -77,8 +77,8 @@ console.log(this.main.tasks)
 
 
 
-    console.log(this.ranTasks)
-    console.log(this.main.tasks)
+    // console.log(this.ranTasks)
+    // console.log(this.main.tasks)
 
 
 

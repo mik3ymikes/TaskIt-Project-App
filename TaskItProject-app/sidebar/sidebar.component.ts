@@ -80,7 +80,7 @@ user=this.localStorage.getData('userData')
 
 
   onLogout(){
-  console.log("hey")
+
  this.authService.logout()
 
 }
