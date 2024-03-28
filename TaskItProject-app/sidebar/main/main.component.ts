@@ -180,11 +180,10 @@ export class MainComponent  {
     this.isHidden = false;
     this.getOpacity = 100;
      this.isActive=true
-    
 
 
 
-
+     
   }
 
 
@@ -254,6 +253,7 @@ this.tasks.forEach((value,index) =>{
 
   this.tasks.splice(index,1)
   this.localStorageService.setData('savedData', this.tasks);
+
 })
 
 this.endNotify()
